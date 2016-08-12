@@ -6,6 +6,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* GET template 1  */
+router.get('/lens', function(req, res, next) {
+  res.render('lens/index', {
+    layout: 'lens/layout', 
+    title: 'Express' 
+  });
+});
+
 /* GET template 2  */
 router.get('/overflow', function(req, res, next) {
   res.render('overflow/index', {
