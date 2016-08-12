@@ -10,15 +10,18 @@ router.get('/', function(req, res, next) {
 router.get('/lens', function(req, res, next) {
   res.render('lens/index', {
     layout: 'lens/layout', 
-    title: 'Express' 
+    title: 'Express',
+    i18n: req.t
   });
 });
 
 /* GET template 2  */
 router.get('/overflow', function(req, res, next) {
+  console.log(req);
   res.render('overflow/index', {
     layout: 'overflow/layout', 
-    title: 'Express' 
+    title: 'Express',
+    i18n: req.t
   });
 });
 
