@@ -21,8 +21,8 @@ html
       header
         h1 Overflow
         p By HTML5 UP
-      footer
-        a.button.style2.scrolly-middle(href='#banner') Proceed as anticipated
+      //- footer
+      //-   a.button.style2.scrolly-middle(href='#banner') Proceed as anticipated
     // Banner
     section#banner
       header
@@ -75,189 +75,165 @@ html
           | Justo phasellus et aenean dignissim
           br
           |           placerat cubilia purus lectus.
-      .inner.gallery
-        .row(class='0%')
-          .3u(class='12u(mobile)')
-            a.image.fit(href='images/fulls/01.jpg')
-              img(src='images/thumbs/01.jpg', alt='', title='Ad infinitum')
-          .3u(class='12u(mobile)')
-            a.image.fit(href='images/fulls/02.jpg')
-              img(src='images/thumbs/02.jpg', alt='', title='Dressed in Clarity')
-          .3u(class='12u(mobile)')
-            a.image.fit(href='images/fulls/03.jpg')
-              img(src='images/thumbs/03.jpg', alt='', title='Raven')
-          .3u(class='12u(mobile)')
-            a.image.fit(href='images/fulls/04.jpg')
-              img(src='images/thumbs/04.jpg', alt='', title="I'll have a cup of Disneyland, please")
-        .row(class='0%')
-          .3u(class='12u(mobile)')
-            a.image.fit(href='images/fulls/05.jpg')
-              img(src='images/thumbs/05.jpg', alt='', title='Cherish')
-          .3u(class='12u(mobile)')
-            a.image.fit(href='images/fulls/06.jpg')
-              img(src='images/thumbs/06.jpg', alt='', title='Different.')
-          .3u(class='12u(mobile)')
-            a.image.fit(href='images/fulls/07.jpg')
-              img(src='images/thumbs/07.jpg', alt='', title='History was made here')
-          .3u(class='12u(mobile)')
-            a.image.fit(href='images/fulls/08.jpg')
-              img(src='images/thumbs/08.jpg', alt='', title='People come and go and walk away')
+
+      include gallery
+      
     // Contact
-    article.container.box.style3
-      header
-        h2 Nisl sed ultricies
-        p Diam dignissim lectus eu ornare volutpat orci.
-      form(method='post', action='#')
-        .row(class='50%')
-          .6u(class='12u$(mobile)')
-            input.text(type='text', name='name', placeholder='Name')
-          .6u(class='6u$ 12u$(mobile)')
-            input.text(type='text', name='email', placeholder='Email')
-          .12u(class='12u$')
-            textarea(name='message', placeholder='Message')
-          .12u(class='12u$')
-            ul.actions
-              li
-                input(type='submit', value='Send Message')
+    //- article.container.box.style3
+    //-   header
+    //-     h2 Nisl sed ultricies
+    //-     p Diam dignissim lectus eu ornare volutpat orci.
+    //-   form(method='post', action='#')
+    //-     .row(class='50%')
+    //-       .6u(class='12u$(mobile)')
+    //-         input.text(type='text', name='name', placeholder='Name')
+    //-       .6u(class='6u$ 12u$(mobile)')
+    //-         input.text(type='text', name='email', placeholder='Email')
+    //-       .12u(class='12u$')
+    //-         textarea(name='message', placeholder='Message')
+    //-       .12u(class='12u$')
+    //-         ul.actions
+    //-           li
+    //-             input(type='submit', value='Send Message')
     // Generic
-    article.container.box.style3
-      header
-        h2 Generic Box
-        p Just a generic box. Nothing to see here.
-      section
-        header
-          h3 Paragraph
-          p This is a subtitle
-        p
-          | Phasellus nisl nisl, varius id 
-          sup porttitor sed pellentesque
-          |  ac orci. Pellentesque
-          |           habitant 
-          strong strong
-          |  tristique 
-          b bold
-          |  et netus 
-          i italic
-          |  malesuada 
-          em emphasized
-          |  ac turpis egestas. Morbi
-          |           leo suscipit ut. Praesent 
-          sub id turpis vitae
-          |  turpis pretium ultricies. Vestibulum sit
-          |           amet risus elit.
-      section
-        header
-          h3 Blockquote
-        blockquote
-          | Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
-          | tempus euismod. Vestibulum ante ipsum primis in faucibus.
-      section
-        header
-          h3 Divider
-        p
-          | Donec consectetur 
-          a(href='#') vestibulum dolor et pulvinar
-          | . Etiam vel felis enim, at viverra
-          |           ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-          |           facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-          |           tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-          |           posuere cubilia.
-        hr
-        p
-          | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-          | ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-          | facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-          | tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-          | posuere cubilia.
-      section
-        header
-          h3 Unordered List
-        ul.default
-          li
-            | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
-          li
-            | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
-          li
-            | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
-          li
-            | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
-      section
-        header
-          h3 Ordered List
-        ol.default
-          li
-            | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
-          li
-            | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
-          li
-            | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
-          li
-            | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
-      section
-        header
-          h3 Table
-        .table-wrapper
-          table.default
-            thead
-              tr
-                th ID
-                th Name
-                th Description
-                th Price
-            tbody
-              tr
-                td 45815
-                td Something
-                td Ut porttitor sagittis lorem quis nisi ornare.
-                td 29.99
-              tr
-                td 24524
-                td Nothing
-                td Ut porttitor sagittis lorem quis nisi ornare.
-                td 19.99
-              tr
-                td 45815
-                td Something
-                td Ut porttitor sagittis lorem quis nisi ornare.
-                td 29.99
-              tr
-                td 24524
-                td Nothing
-                td Ut porttitor sagittis lorem quis nisi ornare.
-                td 19.99
-            tfoot
-              tr
-                td(colspan='3')
-                td 100.00
-      section
-        header
-          h3 Form
-        form(method='post', action='#')
-          .row
-            .6u
-              input#name.text(type='text', name='name', value='', placeholder='John Doe')
-            .6u
-              input#email.text(type='text', name='email', value='', placeholder='johndoe@domain.tld')
-          .row
-            .12u
-              select#department(name='department')
-                option(value='') Choose a department
-                option(value='1') Manufacturing
-                option(value='2') Administration
-                option(value='3') Support
-          .row
-            .12u
-              input#subject.text(type='text', name='subject', value='', placeholder='Enter your subject')
-          .row
-            .12u
-              textarea#message(name='message', placeholder='Enter your message')
-          .row
-            .12u
-              ul.actions
-                li
-                  input(type='submit', value='Submit')
-                li
-                  input.style3(type='reset', value='Clear Form')
+    //- article.container.box.style3
+    //-   header
+    //-     h2 Generic Box
+    //-     p Just a generic box. Nothing to see here.
+    //-   section
+    //-     header
+    //-       h3 Paragraph
+    //-       p This is a subtitle
+    //-     p
+    //-       | Phasellus nisl nisl, varius id 
+    //-       sup porttitor sed pellentesque
+    //-       |  ac orci. Pellentesque
+    //-       |           habitant 
+    //-       strong strong
+    //-       |  tristique 
+    //-       b bold
+    //-       |  et netus 
+    //-       i italic
+    //-       |  malesuada 
+    //-       em emphasized
+    //-       |  ac turpis egestas. Morbi
+    //-       |           leo suscipit ut. Praesent 
+    //-       sub id turpis vitae
+    //-       |  turpis pretium ultricies. Vestibulum sit
+    //-       |           amet risus elit.
+    //-   section
+    //-     header
+    //-       h3 Blockquote
+    //-     blockquote
+    //-       | Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
+    //-       | tempus euismod. Vestibulum ante ipsum primis in faucibus.
+    //-   section
+    //-     header
+    //-       h3 Divider
+    //-     p
+    //-       | Donec consectetur 
+    //-       a(href='#') vestibulum dolor et pulvinar
+    //-       | . Etiam vel felis enim, at viverra
+    //-       |           ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+    //-       |           facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+    //-       |           tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+    //-       |           posuere cubilia.
+    //-     hr
+    //-     p
+    //-       | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
+    //-       | ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+    //-       | facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+    //-       | tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+    //-       | posuere cubilia.
+    //-   section
+    //-     header
+    //-       h3 Unordered List
+    //-     ul.default
+    //-       li
+    //-         | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
+    //-       li
+    //-         | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
+    //-       li
+    //-         | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
+    //-       li
+    //-         | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
+    //-   section
+    //-     header
+    //-       h3 Ordered List
+    //-     ol.default
+    //-       li
+    //-         | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
+    //-       li
+    //-         | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
+    //-       li
+    //-         | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
+    //-       li
+    //-         | Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.
+    //-   section
+    //-     header
+    //-       h3 Table
+    //-     .table-wrapper
+    //-       table.default
+    //-         thead
+    //-           tr
+    //-             th ID
+    //-             th Name
+    //-             th Description
+    //-             th Price
+    //-         tbody
+    //-           tr
+    //-             td 45815
+    //-             td Something
+    //-             td Ut porttitor sagittis lorem quis nisi ornare.
+    //-             td 29.99
+    //-           tr
+    //-             td 24524
+    //-             td Nothing
+    //-             td Ut porttitor sagittis lorem quis nisi ornare.
+    //-             td 19.99
+    //-           tr
+    //-             td 45815
+    //-             td Something
+    //-             td Ut porttitor sagittis lorem quis nisi ornare.
+    //-             td 29.99
+    //-           tr
+    //-             td 24524
+    //-             td Nothing
+    //-             td Ut porttitor sagittis lorem quis nisi ornare.
+    //-             td 19.99
+    //-         tfoot
+    //-           tr
+    //-             td(colspan='3')
+    //-             td 100.00
+    //-   section
+    //-     header
+    //-       h3 Form
+    //-     form(method='post', action='#')
+    //-       .row
+    //-         .6u
+    //-           input#name.text(type='text', name='name', value='', placeholder='John Doe')
+    //-         .6u
+    //-           input#email.text(type='text', name='email', value='', placeholder='johndoe@domain.tld')
+    //-       .row
+    //-         .12u
+    //-           select#department(name='department')
+    //-             option(value='') Choose a department
+    //-             option(value='1') Manufacturing
+    //-             option(value='2') Administration
+    //-             option(value='3') Support
+    //-       .row
+    //-         .12u
+    //-           input#subject.text(type='text', name='subject', value='', placeholder='Enter your subject')
+    //-       .row
+    //-         .12u
+    //-           textarea#message(name='message', placeholder='Enter your message')
+    //-       .row
+    //-         .12u
+    //-           ul.actions
+    //-             li
+    //-               input(type='submit', value='Submit')
+    //-             li
+    //-               input.style3(type='reset', value='Clear Form')
     section#footer
       ul.icons
         li

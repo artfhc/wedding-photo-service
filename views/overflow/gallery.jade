@@ -1,0 +1,7 @@
+.inner.gallery
+  each row in photos
+    .row(class='0%') 
+      each photo in row
+        .3u(class='12u(mobile)')
+          a.image.fit(href='#{photo.url}')
+            img(src='#{photo.url}', alt='#{photo.alt}', title='#{photo.title}')
