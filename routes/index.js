@@ -19,6 +19,9 @@ Number.prototype.pad = function(size) {
   while (s.length < (size || 2)) {s = "0" + s;}
   return s;
 }
+Array.prototype.clone = function() {
+  return this.slice(0);
+};
 var imageLength = 18;
 var imagesData = [];
 var i = 0;
@@ -33,8 +36,10 @@ for (i = 0; i < imageLength; i++) {
   temp.description = imageDataDescription['imageDecsripton'][i].description;
   imagesData.push(temp);
 }
-while(imagesData[0])
-  photosRows4.push(imagesData.splice(0,4));
+
+var imagesData2 = imagesData.clone();
+while(imagesData2[0])
+  photosRows4.push(imagesData2.splice(0,4));
 
 /* GET template 1  */
 router.get('/lens', function(req, res, next) {
