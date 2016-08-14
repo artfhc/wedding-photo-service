@@ -6,3 +6,6 @@
 
    run the app:
      $ DEBUG=wedding-photo-service:* npm start
+
+## Problems with SASS
+   npm rebuild node-sass

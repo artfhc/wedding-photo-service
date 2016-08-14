@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var photos = require('../data/photos.json');
 var imageDataDescription = require('../data/imagedescription.json');
 var s3Path = 'https://s3-us-west-2.amazonaws.com/propose-photos/';
 var s3ThumbnailPrefix = 'thumb-';
@@ -34,8 +33,8 @@ for (i = 0; i < imageLength; i++) {
   temp.description = imageDataDescription['imageDecsripton'][i].description;
   imagesData.push(temp);
 }
-while(photos[0])
-  photosRows4.push(photos.splice(0,4));
+while(imagesData[0])
+  photosRows4.push(imagesData.splice(0,4));
 
 /* GET template 1  */
 router.get('/lens', function(req, res, next) {
@@ -54,7 +53,9 @@ router.get('/overflow', function(req, res, next) {
   res.render('overflow/index', {
     layout: 'overflow/layout', 
     title: 'Express',
-    photos: photosRows4,
+    pageData: {
+      images: photosRows4
+    },
     i18n: req.t
   });
 });
