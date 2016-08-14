@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var photos = require('../data/photos.json');
 var imageDataDescription = require('../data/imagedescription.json');
-var s3Path = 'https://s3-us-west-2.amazonaws.com/wedding-reg/';
-var s3ThumbnailPrefix = 'thumbnail-';
+var s3Path = 'https://s3-us-west-2.amazonaws.com/propose-photos/';
+var s3ThumbnailPrefix = 'thumb-';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -20,15 +20,15 @@ Number.prototype.pad = function(size) {
   while (s.length < (size || 2)) {s = "0" + s;}
   return s;
 }
-var imageSet = [1, 2, 3, 4, 5, 8, 10, 11, 13, 14, 15];
+var imageLength = 18;
 var imagesData = [];
 var i = 0;
 var photosRows4 = [];
 
-for (i = 0; i < imageSet.length; i++) { 
+for (i = 0; i < imageLength; i++) { 
   temp = {
-    full: s3Path + imageSet[i].pad(4) + '.jpg',
-    thumb: s3Path + s3ThumbnailPrefix + imageSet[i].pad(2) + '.jpg'
+    full: s3Path + (i + 1).pad(4) + '.jpg',
+    thumb: s3Path + s3ThumbnailPrefix + (i + 1).pad(2) + '.jpg'
   };
   temp.title = imageDataDescription['imageDecsripton'][i].title;
   temp.description = imageDataDescription['imageDecsripton'][i].description;

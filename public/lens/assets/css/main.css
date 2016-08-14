@@ -857,9 +857,11 @@
 
 		#thumbnails article {
 			position: relative;
-			width: 50%;
+			width: 49%;
 			background: #101010;
 			outline: 0;
+			margin-right: 1px;
+			margin-bottom: 1px;
 		}
 
 			#thumbnails article .thumbnail {
