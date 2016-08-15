@@ -758,6 +758,43 @@
 		}
 	}
 
+/* Map */
+
+	#banner {
+
+		#map-container {
+			position:relative;
+
+			#map {
+				height: 430px;
+				margin: 0;
+			}
+		}
+
+		.banner-container {
+			padding: 1em;
+
+			.banner-location {
+				display: none;
+				height: 300px;
+			}
+		}
+
+		footer {
+			margin: 0;
+
+			.hk-btn-container {
+				float: left;
+				width: 50%;
+			}
+
+			.macau-btn-container {
+				float: right;
+				width: 50%;
+			}
+		}
+	}
+
 /* Footer */
 
 	#footer {
@@ -800,6 +837,33 @@
 		.copyright {
 			margin: 0 0 9em 0;
 			font-size: 0.8em;
+		}
+	}
+
+/* Google Map Infowindows */
+	.infow {
+		display: none;
+	}
+
+	#banner {
+		.infow-container {
+			overflow: auto; 
+			color: #3a3939; 
+			line-height: 1.75em;
+
+			h1.infow-title {}
+
+			.infow-content {
+
+				p.infow-contact {
+
+					a:hover {
+						text-decoration: underline;
+					}
+				}
+
+				p.infow-description {}
+			}
 		}
 	}
 
@@ -1030,6 +1094,10 @@
 
 				br {
 					display: none;
+				}
+
+				br.clear {
+					display: block;
 				}
 			}
 

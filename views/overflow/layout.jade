@@ -24,25 +24,26 @@ html
       //- footer
       //-   a.button.style2.scrolly-middle(href='#banner') Proceed as anticipated
     // Banner
-    section#banner
-      header
-        h2 This is Overflow
-      p
-        | A brand new site template designed by 
-        a(href='http://twitter.com/ajlkn') AJ
-        |  for 
-        a(href='http://html5up.net') HTML5 UP
-        | .
-        br
-        |         It’s fully responsive, built on 
-        strong skel
-        | , and of course entirely free
-        br
-        |         under the 
-        a(href='http://html5up.net/license') Creative Commons license
-        | .
-      footer
-        a.button.style2.scrolly(href='#first') Act on this message
+    section#banner(style="padding:2em 0;")
+      include map
+      //- header
+      //-   h2 This is Overflow
+      //- p
+      //-   | A brand new site template designed by 
+      //-   a(href='http://twitter.com/ajlkn') AJ
+      //-   |  for 
+      //-   a(href='http://html5up.net') HTML5 UP
+      //-   | .
+      //-   br
+      //-   |         It’s fully responsive, built on 
+      //-   strong skel
+      //-   | , and of course entirely free
+      //-   br
+      //-   |         under the 
+      //-   a(href='http://html5up.net/license') Creative Commons license
+      //-   | .
+      //- footer
+      //-   a.button.style2.scrolly(href='#first') Act on this message
     // Feature 1
     article#first.container.box.style1.right
       a.image.fit(href='#')
@@ -260,6 +261,11 @@ html
           li
             | Design: 
             a(href='http://html5up.net') HTML5 UP
+
+    // Hidden overlays for google maps
+    include infowindow-hk
+    include infowindow-macau
+
     // Scripts
     script(src='assets/js/jquery.min.js')
     script(src='assets/js/jquery.scrolly.min.js')
@@ -269,3 +275,5 @@ html
     //if lte IE 8
       script(src='assets/js/ie/respond.min.js')
     script(src='assets/js/main.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyACGHtQ_95KW0yN2nZOCNPn07VNa3pEROg')
+    script(src='assets/js/map.js')
