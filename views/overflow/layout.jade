@@ -261,6 +261,11 @@ html
           li
             | Design: 
             a(href='http://html5up.net') HTML5 UP
+        form#language-form(style="width: 40%; margin: 0 auto;")
+          select(action="" name="language-select" style="line-height: 1.2em;")
+            option(value="") Select a Language
+            option(value="en") English
+            option(value="ch") Chinese
 
     // Hidden overlays for google maps
     include infowindow-hk
@@ -275,5 +280,6 @@ html
     //if lte IE 8
       script(src='assets/js/ie/respond.min.js')
     script(src='assets/js/main.js')
+    script(src='assets/js/language.js')
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyACGHtQ_95KW0yN2nZOCNPn07VNa3pEROg')
     script(src='assets/js/map.js')
