@@ -65,4 +65,13 @@ router.get('/overflow', function(req, res, next) {
   });
 });
 
+/* GET template 3  */
+router.get('/wedding', function(req, res, next) {
+  res.render('wedding/index', {
+    layout: 'wedding/layout', 
+    title: "Arthur and Timberly's Wedding",
+    i18n: req.t
+  });
+});
+
 module.exports = router;
