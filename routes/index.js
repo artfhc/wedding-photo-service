@@ -74,4 +74,13 @@ router.get('/wedding', function(req, res, next) {
   });
 });
 
+/* GET template Under Construction  */
+router.get('/underconstruction', function(req, res, next) {
+  res.render('underconstruction/index', {
+    layout: 'underconstruction/layout', 
+    title: "Arthur and Timberly's Wedding Under Construction",
+    i18n: req.t
+  });
+});
+
 module.exports = router;
