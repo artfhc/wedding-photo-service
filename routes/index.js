@@ -4,12 +4,6 @@ var imageDataDescription = require('../data/imagedescription.json');
 var s3Path = 'https://s3-us-west-2.amazonaws.com/propose-photos/';
 var s3ThumbnailPrefix = 'thumb-';
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-
 /**
  * Initializing the Data. Obviously the data is going to be hardcoded
  * because no data store support.
@@ -66,16 +60,24 @@ router.get('/overflow', function(req, res, next) {
 });
 
 /* GET template 3  */
+var weddingImageData = [];
+weddingImageData.push({'thumb': s3Path + 'thumb-min-004.jpg', 'img': s3Path + "min-004.jpg"});
+weddingImageData.push({'thumb': s3Path + 'thumb-min-007.jpg', 'img': s3Path + "min-007.jpg"});
+weddingImageData.push({'thumb': s3Path + 'thumb-min-001.jpg', 'img': s3Path + "min-001.jpg"});
 router.get('/wedding', function(req, res, next) {
   res.render('wedding/index', {
     layout: 'wedding/layout', 
     title: "Arthur and Timberly's Wedding",
+    homeImage: s3Path + "0003.jpg",
+    footerImage: s3Path + "wedding-footer-3.jpg",
+    hostPlaceImage: s3Path + "wedding-hongkong.jpg",
+    images: weddingImageData,
     i18n: req.t
   });
 });
 
 /* GET template Under Construction  */
-router.get('/underconstruction', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('underconstruction/index', {
     layout: 'underconstruction/layout', 
     title: "Arthur and Timberly's Wedding Under Construction",

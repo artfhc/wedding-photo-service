@@ -5,7 +5,7 @@ html.touch-styles(xmlns:og='http://opengraphprotocol.org/schema/', xmlns:fb='htt
     meta(name='viewport', content='width=device-width, initial-scale=1')
     base(href='')
     meta(charset='utf-8')
-    title Arthur and Timberly's Wedding
+    title #{title}
     link(rel='shortcut icon', type='image/x-icon', href='favicon.ico')
     link(rel='canonical', href='index.html')
     meta(property='og:site_name', content=' ')
@@ -118,7 +118,7 @@ html.touch-styles(xmlns:og='http://opengraphprotocol.org/schema/', xmlns:fb='htt
             .banner-thumbnail-wrapper.has-description(data-content-field='main-image')
               .color-overlay
               figure#thumbnail.loading.content-fill
-                img(data-src='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/578741166a49637b8a1b9ed6/1468481822122/160711_010.jpg', data-image='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/578741166a49637b8a1b9ed6/1468481822122/160711_010.jpg', data-image-dimensions='5000x3333', data-image-focal-point='0.5,0.5', alt='160711_010.jpg')
+                img(data-src='#{homeImage}', data-image-dimensions='5000x3333', data-image-focal-point='0.5,0.5', alt='160711_010.jpg')
               .desc-wrapper(data-content-field='description')
                 p
                   strong Arthur and Timberly's Wedding
@@ -139,33 +139,10 @@ html.touch-styles(xmlns:og='http://opengraphprotocol.org/schema/', xmlns:fb='htt
                         .sqs-block-content
                           h1.text-align-center 😍We are getting married!💑
                       .row.sqs-row
-                        .col.sqs-col-4.span-4
-                          #block-4b416bc510ebfb193c6b.sqs-block.image-block.sqs-block-image(data-aspect-ratio='66.24605678233438', data-block-type='5')
-                            .sqs-block-content
-                              .image-block-outer-wrapper.layout-caption-below
-                                .intrinsic(style='max-width:1204.0px;')
-                                  .image-block-wrapper.has-aspect-ratio(style='padding-bottom:66.24605560302734%;', data-description='')
-                                    noscript
-                                      img(src='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/57734b3bcd0f68f30779f29b/1467173751352/')
-                                    img.thumb-image(data-src='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/57734b3bcd0f68f30779f29b/1467173751352/', data-image='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/57734b3bcd0f68f30779f29b/1467173751352/', data-image-dimensions='1204x1333', data-image-focal-point='0.5855263157894737,0.22023809523809523', data-load='false', data-image-id='57734b3bcd0f68f30779f29b', data-type='image')
-                        .col.sqs-col-4.span-4
-                          #block-a0f7c55b4721df00bc92.sqs-block.image-block.sqs-block-image(data-aspect-ratio='66.8769716088328', data-block-type='5')
-                            .sqs-block-content
-                              .image-block-outer-wrapper.layout-caption-below
-                                .intrinsic(style='max-width:1280.0px;')
-                                  .image-block-wrapper.has-aspect-ratio(style='padding-bottom:66.87696838378906%;', data-description='')
-                                    noscript
-                                      img(src='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/5768a7752994caa37d702ede/1467173760003/IMG_5174.JPG', alt='IMG_5174.JPG')
-                                    img.thumb-image(alt='IMG_5174.JPG', data-src='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/5768a7752994caa37d702ede/1467173760003/IMG_5174.JPG', data-image='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/5768a7752994caa37d702ede/1467173760003/IMG_5174.JPG', data-image-dimensions='1280x960', data-image-focal-point='0.5,0.5', data-load='false', data-image-id='5768a7752994caa37d702ede', data-type='image')
-                        .col.sqs-col-4.span-4
-                          #block-c123d3ed273b00fcef20.sqs-block.image-block.sqs-block-image(data-aspect-ratio='66.5615141955836', data-block-type='5')
-                            .sqs-block-content
-                              .image-block-outer-wrapper.layout-caption-below
-                                .intrinsic(style='max-width:2448.0px;')
-                                  .image-block-wrapper.has-aspect-ratio(style='padding-bottom:66.56151580810547%;', data-description='')
-                                    noscript
-                                      img(src='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/57734b1c197aea40f1260e0a/1467173755420/roshni_blog_031.jpg', alt='roshni_blog_031.jpg')
-                                    img.thumb-image(alt='roshni_blog_031.jpg', data-src='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/57734b1c197aea40f1260e0a/1467173755420/roshni_blog_031.jpg', data-image='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/57734b1c197aea40f1260e0a/1467173755420/roshni_blog_031.jpg', data-image-dimensions='2448x3264', data-image-focal-point='0.49206349206349204,0.3273809523809524', data-load='false', data-image-id='57734b1c197aea40f1260e0a', data-type='image')
+                        each imageData in images
+                              .col.sqs-col-4.span-4
+                                .sqs-block.image-block
+                                    img.thumb-image(src='#{imageData.thumb}')
                       #block-yui_3_17_2_3_1466475625216_11809.sqs-block.html-block.sqs-block-html(data-block-type='2')
                         .sqs-block-content
                           blockquote.text-align-center Yep, its happening!
@@ -174,7 +151,7 @@ html.touch-styles(xmlns:og='http://opengraphprotocol.org/schema/', xmlns:fb='htt
             .banner-thumbnail-wrapper.has-description(data-content-field='main-image')
               .color-overlay
               figure#thumbnail.loading.content-fill
-                img(data-src='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/5768a6b82e69cfaa57b2d40e/1466476229886/Screen+Shot+2016-06-20+at+7.29.38+PM.png', data-image='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/5768a6b82e69cfaa57b2d40e/1466476229886/Screen+Shot+2016-06-20+at+7.29.38+PM.png', data-image-dimensions='2216x717', data-image-focal-point='0.5,0.5', alt='Screen Shot 2016-06-20 at 7.29.38 PM.png')
+                img(data-src='#{hostPlaceImage}', data-image='#{hostPlaceImage}', data-image-dimensions='2216x717', data-image-focal-point='0.5,0.5', alt='Screen Shot 2016-06-20 at 7.29.38 PM.png')
               .desc-wrapper(data-content-field='description')
                 p Come celebrate with us
                 p
@@ -218,7 +195,7 @@ html.touch-styles(xmlns:og='http://opengraphprotocol.org/schema/', xmlns:fb='htt
             .banner-thumbnail-wrapper.has-description(data-content-field='main-image')
               .color-overlay
               figure#thumbnail.loading.content-fill
-                img(data-src='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/5772269903596e3fee375c38/1467098785199/DSC08168.jpg', data-image='http://static1.squarespace.com/static/5768a14e44024398993b5f2c/t/5772269903596e3fee375c38/1467098785199/DSC08168.jpg', data-image-dimensions='4500x3000', data-image-focal-point='0.5,0.5', alt='DSC08168.jpg')
+                img(data-src='#{footerImage}', data-image='#{footeImage}', data-image-dimensions='4500x3000', data-image-focal-point='0.5,0.5', alt='DSC08168.jpg')
               .desc-wrapper(data-content-field='description')
                 p
                   strong We are super excited about you joining us
