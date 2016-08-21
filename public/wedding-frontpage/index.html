@@ -14,11 +14,42 @@ body {
   font-family: "freight-sans-pro";
 }
 
+.sm-heading {
+  color: #f9b862;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.jumbotron {
+  margin-bottom: 0;
+}
+
+.image-container {
+  position: relative;
+}
+
 .bg-image {
   /* image specified in seperate class  */
   height: 520px;
   width: 100%;
   background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/0003.jpg);
+}
+
+.bg-image-hk {
+  /* image specified in seperate class  */
+  height: 448px;
+  width: 100%;
+  background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-hongkong.jpg);
+}
+
+.bg-image-footer {
+  /* image specified in seperate class  */
+  height: 441px;
+  width: 100%;
+  background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-footer-3.jpg);
 }
 
 .bg-image-wedding {
@@ -88,6 +119,11 @@ p {
   width: 100%;
   padding-top: 10%;
 }
+
+#footer-image-section .desc-wrapper { 
+  padding-top: 8%; 
+}
+
 .desc-wrapper p {
     font-size: 22px;
     line-height: 1.5em;
@@ -121,20 +157,27 @@ img {
 @media only screen and (min-width : 768px) {
 
   .bg-image { height: 600px; }
+  .bg-image-hk { height: 448px; }
+  .bg-image-footer { height: 411px; }
   .desc-wrapper {
     padding-top:15%;
   }
+  #hk-image-section .desc-wrapper { padding-top: 12%; }
 }
 
 @media only screen and (min-width : 1200px) {
 
   .bg-image { height: 680px; }
+  .bg-image-hk { height: 580px; }
+  .bg-image-footer { height: 617px; }
   .desc-wrapper {
     padding-left: 15%;
     padding-right: 15%;
   }
+  #footer-image-section .desc-wrapper { padding-top: 12%; }
 }
         </style>
+        <link rel="stylesheet" href="css/poptrox.css">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -151,7 +194,7 @@ img {
         <![endif]-->
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div id="image-container">
+    <div class="image-container">
       <div class="bg-image bg-image-wedding bg-center-center" alt="">
         <div class="color-overlay"></div>
       </div>
@@ -166,16 +209,27 @@ img {
       </div>
     </div>
 
-
-    <div class="jumbotron">
+    <div id="photo-gallery" class="jumbotron">
       <div class="container">
         <div class="row">
           <h1 class="text-center entrytitle">😍We are getting married!💑</h1>
         </div>
         <div class="row spaces">
-          <div class="col-md-4"><img alt="" src="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg"/></div>
-          <div class="col-md-4"><img alt="" src="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg"/></div>
-          <div class="col-md-4"><img alt="" src="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg"/></div>
+          <div class="col-md-4">
+            <a href="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg">
+              <img title="1" alt="1" src="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg"/>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg">
+              <img title="2" alt="2" src="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg"/>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg">
+              <img title="3" alt="3" src="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg"/>
+            </a>
+          </div>
         </div>
         <div class="row">
           <p class="text-center">Yep, its happening!</p>
@@ -183,8 +237,84 @@ img {
       </div>
     </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
+    <div id="hk-image-section" class="image-container">
+      <div class="bg-image-hk bg-image-wedding bg-center-center" alt="">
+        <div class="color-overlay"></div>
+      </div>
+      <div class="desc-wrapper">
+        <p>Come celebrate with us</p>
+        <h1 class="display-2">October, 30th, 2016</h1>
+        <p>Wente Vineyard</p>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <h2 class="text-center entrytitle">Schedule (Temporary)</h2>
+        </div>
+        <div class="row spaces">
+          <p class="text-center"><strong>16:30</strong>&nbsp;Arrival and sign in</p>
+          <p class="text-center"><strong>17:00</strong> Wedding Ceremony</p>
+          <p class="text-center"><strong>17:30</strong> Cocktail Hour</p>
+          <p class="text-center"><strong>19:00</strong> Dinner</p>
+          <p class="text-center"><strong>20:00</strong> Cake Cutting &amp; Party</p>
+          <p class="text-center"><strong>22:00</strong> Time for Home</p>
+          <p class="text-center">(Make sure you check back again for a finalized schedule)</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer-image-section" class="image-container">
+      <div class="bg-image-footer bg-image-wedding bg-center-center" alt="">
+        <div class="color-overlay"></div>
+      </div>
+      <div class="desc-wrapper">
+        <h1 class="display-2">We are super excited about you joining us</h1>
+        <p>You should be too...</p>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <h2 class="text-center entrytitle">Directions</h2>
+        </div>
+        <div class="row spaces">
+          <p class="text-center">Once again, its -</p>
+          <p class="text-center"><strong>5040 Arroyo Road Livermore, CA, 94550, United States</strong></p>
+          <p class="text-center">Expect some traffic heading over there!</p>
+        </div>
+        <div class="row spaces">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div id="map" style="height: 400px;"></div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <div class="row spaces">
+          <div class="col-md-6">
+            <p class="text-center sm-heading">Flying</p>
+            <p class="text-center">Try flying to SJC, its closer</p>
+          </div>
+          <div class="col-md-6">
+            <p class="text-center sm-heading">Driving</p>
+            <p class="text-center">Seriously, just google map it!</p>
+          </div>
+        </div>
+        <div class="row spaces">
+          <h4 class="text-center">Have questions?</h4>
+          <p class="text-center sm-heading">Call Me</p>
+          <p class="text-center">408-476-5953</p>
+          <p class="text-center sm-heading">Email Me</p>
+          <p class="text-center">owenc.817@gmail.com</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- <div class="container">
       <div class="row">
         <div class="col-md-4">
           <h2>Heading</h2>
@@ -201,7 +331,7 @@ img {
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
-      </div>
+      </div> -->
 
       <hr>
 
@@ -216,6 +346,7 @@ img {
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/plugins.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACGHtQ_95KW0yN2nZOCNPn07VNa3pEROg"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
