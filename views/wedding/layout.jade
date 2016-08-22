@@ -1,302 +1,316 @@
 doctype html
-html.touch-styles(xmlns:og='http://opengraphprotocol.org/schema/', xmlns:fb='http://www.facebook.com/2008/fbml', xmlns:website='http://ogp.me/ns/website', lang='en-US', itemscope='', itemtype='http://schema.org/WebPage')
+html.no-js(lang='')
   head
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    base(href='')
     meta(charset='utf-8')
-    title #{title}
-    link(rel='shortcut icon', type='image/x-icon', href='favicon.ico')
-    link(rel='canonical', href='index.html')
-    meta(property='og:site_name', content=' ')
-    meta(property='og:title', content="Arthur and Timberly's Wedding")
-    meta(property='og:url', content='http://www.arthurtimberly.com/')
-    meta(property='og:type', content='website')
-    meta(itemprop='name', content='NO-Wedding')
-    meta(itemprop='url', content='http://www.arthurtimberly.com/')
-    meta(name='twitter:title', content='NO-Wedding')
-    meta(name='twitter:url', content='http://www.arthurtimberly.com/')
-    meta(name='twitter:card', content='summary')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title Arthur Timber Wedding
     meta(name='description', content='')
-    script(type='text/javascript', src='/wedding/assets/typekit.js')
-    script(type='text/javascript', src='/wedding/assets/YUI-min.js')
-    script(type='text/javascript').
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    style.
+      body {
+      font-family: "freight-sans-pro";
+      }
+      .padding-top-bottom-15 {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      }
+      .sm-heading {
+      color: #f9b862;
+      line-height: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-style: normal;
+      }
+      .jumbotron {
+      margin-bottom: 0;
+      }
+      .image-container {
+      position: relative;
+      }
+      .bg-image {
+      /* image specified in seperate class  */
+      height: 520px;
+      width: 100%;
+      background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/0003.jpg);
+      }
+      .bg-image-hk {
+      /* image specified in seperate class  */
+      height: 448px;
+      width: 100%;
+      background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-hongkong.jpg);
+      }
+      .bg-image-footer {
+      /* image specified in seperate class  */
+      height: 441px;
+      width: 100%;
+      background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-footer-3.jpg);
+      }
+      .bg-image-wedding {
+      /* lt ie8 */
+      -ms-background-position-x: center;
+      -ms-background-position-y: bottom;
+      /* default - may override with classes or media query */
+      background-position: center bottom;
+      /* scale bg image proportionately */
+      background-size: cover;
+      /* ie8 polyfill */
+      -ms-behavior: url(backgroundsize.min.htc);
+      /* prevent scaling past src width (or not) */
+      /* max-width: 1200px; */ }
+      .bg-center-center {
+      -ms-background-position-x: center;
+      -ms-background-position-y: center;
+      background-position: center center; }
+      /* the "padding trick" thanks to Corey Worrell */
+      .background {
+      height:0;
+      padding-bottom:40%;
+      background-position: center bottom;
+      /* scale bg image proportionately */
+      background-size: cover; /* or 100% */
+      }
+      .text-center {
+      text-align: center;
+      }
+      .entrytitle {
+      font-size: 42px;
+      line-height: 1.2em;
+      text-transform: none;
+      letter-spacing: 1px;
+      font-weight: 300;
+      font-style: normal;
+      }
+      .color-overlay {
+      position: inline-block;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(26,17,34,.6);
+      z-index: 99;
+      }
+      p {
+      display: block;
+      -webkit-margin-before: 1em;
+      -webkit-margin-after: 1em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+      }
+      .desc-wrapper {
+      color: #FFF;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-top: 10%;
+      }
+      #footer-image-section .desc-wrapper {
+      padding-top: 8%;
+      }
+      .desc-wrapper p {
+      font-size: 22px;
+      line-height: 1.5em;
+      text-transform: none;
+      letter-spacing: 1.3px;
+      font-weight: 300;
+      font-style: normal;
+      color: rgb(255, 255, 255);
+      transform: translateZ(0px);
+      margin: 20px auto;
+      }
+      .button-div {
+      width: 100%;
+      float: none;
+      margin: 0 auto;
+      }
+      .jumbotron {
+      background-color: #FFF;
+      }
+      img {
+      width: 100%;
+      }
+      .spaces {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      }
+      /* example media query */
+      @media only screen and (min-width : 768px) {
+      .bg-image { height: 600px; }
+      .bg-image-hk { height: 448px; }
+      .bg-image-footer { height: 411px; }
+      .desc-wrapper {
+      padding-top:15%;
+      }
+      #hk-image-section .desc-wrapper { padding-top: 12%; }
+      }
+      @media only screen and (min-width : 1200px) {
+      .bg-image { height: 680px; }
+      .bg-image-hk { height: 580px; }
+      .bg-image-footer { height: 617px; }
+      .desc-wrapper {
+      padding-left: 15%;
+      padding-right: 15%;
+      }
+      #footer-image-section .desc-wrapper { padding-top: 12%; }
+      }
+      footer {
+      color: rgba(255,255,255,.4);
+      background-color: #08001a;
+      }
+      .footer-inner {
+      padding: 64px 32px;
+      max-width: 1020px;
+      }
+    link(rel='stylesheet', href='css/poptrox.css')
+    link(rel='stylesheet', href='css/main.css')
+    script(src='js/vendor/modernizr-2.8.3.min.js')
+    script(src='js/vendor/typekit.js')
+    script.
       try {
       Typekit.load();
       } catch (e) {}
-    link(rel='alternate', type='application/rss+xml', title='RSS Feed', href='wedding-format=RSS.rss')
-    //if gte IE 9
-      link(rel='stylesheet', type='text/css', href='http://static1.squarespace.com/static/sitecss/5768a14e44024398993b5f2c/2/52a74dafe4b073a80cd253c5/5768a14e44024398993b5f32/961-05142015/1468482177504/site.css?&filterFeatures=false&part=1')
-      link(rel='stylesheet', type='text/css', href='http://static1.squarespace.com/static/sitecss/5768a14e44024398993b5f2c/2/52a74dafe4b073a80cd253c5/5768a14e44024398993b5f32/961-05142015/1468482177504/site.css?&filterFeatures=false&part=2')
-      link(rel='stylesheet', type='text/css', href='http://static1.squarespace.com/static/sitecss/5768a14e44024398993b5f2c/2/52a74dafe4b073a80cd253c5/5768a14e44024398993b5f32/961-05142015/1468482177504/site.css?&filterFeatures=false&part=3')
-      link(rel='stylesheet', type='text/css', href='http://static1.squarespace.com/static/sitecss/5768a14e44024398993b5f2c/2/52a74dafe4b073a80cd253c5/5768a14e44024398993b5f32/961-05142015/1468482177504/site.css?&filterFeatures=false&part=4')
-    //if lt IE 9
-      link(rel='stylesheet', type='text/css', href='http://static1.squarespace.com/static/sitecss/5768a14e44024398993b5f2c/2/52a74dafe4b073a80cd253c5/5768a14e44024398993b5f32/961-05142015/1468482177504/site.css?&filterFeatures=false&noMedia=true&part=1')
-      link(rel='stylesheet', type='text/css', href='http://static1.squarespace.com/static/sitecss/5768a14e44024398993b5f2c/2/52a74dafe4b073a80cd253c5/5768a14e44024398993b5f32/961-05142015/1468482177504/site.css?&filterFeatures=false&noMedia=true&part=2')
-      link(rel='stylesheet', type='text/css', href='http://static1.squarespace.com/static/sitecss/5768a14e44024398993b5f2c/2/52a74dafe4b073a80cd253c5/5768a14e44024398993b5f32/961-05142015/1468482177504/site.css?&filterFeatures=false&noMedia=true&part=3')
-      link(rel='stylesheet', type='text/css', href='http://static1.squarespace.com/static/sitecss/5768a14e44024398993b5f2c/2/52a74dafe4b073a80cd253c5/5768a14e44024398993b5f32/961-05142015/1468482177504/site.css?&filterFeatures=false&noMedia=true&part=4')
-    //if !IE
-    link(rel='stylesheet', type='text/css', href='/wedding/assets/site.css')
-    // <![endif]
-    // End of Squarespace Headers
+  body
+    //if lt IE 8
+      p.browserupgrade
+        | You are using an 
+        strong outdated
+        |  browser. Please 
+        a(href='http://browsehappy.com/') upgrade your browser
+        |  to improve your experience.
+    // Main jumbotron for a primary marketing message or call to action
+    .image-container
+      .bg-image.bg-image-wedding.bg-center-center(alt='')
+        .color-overlay
+      .desc-wrapper
+        h1.display-2 Arthur and Timberly's Wedding
+        p October 2nd, 2016 · 8 Pak Hok Ting Street, Shatin, Hong Kong
+        .button-div
+          button.btn.btn-warning(type='button') Hong Kong
+          button.btn.btn-default(type='button') Macau
+    #photo-gallery.jumbotron
+      .container
+        .row
+          h1.text-center.entrytitle 😍We are getting married!💑
+        .row
+          .col-md-4.padding-top-bottom-15
+            a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg')
+              img(title='1', alt='1', src='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg')
+          .col-md-4.padding-top-bottom-15
+            a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg')
+              img(title='2', alt='2', src='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg')
+          .col-md-4.padding-top-bottom-15
+            a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg')
+              img(title='3', alt='3', src='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg')
+        .row
+          p.text-center Yep, its happening!
+    #hk-image-section.image-container
+      .bg-image-hk.bg-image-wedding.bg-center-center(alt='')
+        .color-overlay
+      .desc-wrapper
+        p Come celebrate with us
+        h1.display-2 October, 30th, 2016
+        p Royal Park Hong Kong Hotel
+    .jumbotron
+      .container
+        .row
+          h2.text-center.entrytitle Schedule (Temporary)
+        .row.spaces
+          p.text-center
+            strong 16:30
+            |  Arrival and sign in
+          p.text-center
+            strong 17:00
+            |  Wedding Ceremony
+          p.text-center
+            strong 17:30
+            |  Cocktail Hour
+          p.text-center
+            strong 19:00
+            |  Dinner
+          p.text-center
+            strong 20:00
+            |  Cake Cutting & Party
+          p.text-center
+            strong 22:00
+            |  Time for Home
+          p.text-center (Make sure you check back again for a finalized schedule)
+    #footer-image-section.image-container
+      .bg-image-footer.bg-image-wedding.bg-center-center(alt='')
+        .color-overlay
+      .desc-wrapper
+        h1.display-2 We are super excited about you joining us
+        p You should be too...
+    .jumbotron
+      .container
+        .row
+          h2.text-center.entrytitle Directions
+        .row.spaces
+          p.text-center Once again, its -
+          p.text-center
+            strong 8 Pak Hok Ting Street, Shatin, Hong Kong
+          p.text-center Expect some traffic heading over there!
+        .row.spaces
+          .col-md-2
+          .col-md-8
+            #map(style='height: 400px;')
+          .col-md-2
+        .row.spaces
+          .col-md-6
+            p.text-center.sm-heading MTR
+            p.text-center Sha Tin Station
+          .col-md-6
+            p.text-center.sm-heading Driving
+            p.text-center Seriously, just google map it!
+        .row.spaces
+          h4.text-center Have questions?
+          p.text-center.sm-heading Facebook me
+          p.text-center
+            a(href='https://www.facebook.com/artfhc') https://www.facebook.com/artfhc
+          p.text-center.sm-heading Email Me
+          p.text-center
+            a(href='mailto:artfhc@gmail.com') artfhc@gmail.com
+    //
+      <div class="container">
+      <div class="row">
+      <div class="col-md-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+      <h2>Heading</h2>
+      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>
+      </div>
+    footer#footer
+      .footer-inner.container
+        .row
+          .col-md-12
+            p.text-center See you there! =)
+    // /container
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     script.
-      /* Must be below squarespace-headers */
-      (function() {
-      var e = 'ontouchstart' in window || navigator.msMaxTouchPoints;
-      var t = document.documentElement;
-      if (!e && t) {
-      t.className = t.className.replace(/touch-styles/, '')
-      }
-      })()
-  body#collection-578742586a49637b8a1ba40d.transparent-header.enable-nav-button.nav-button-style-outline.nav-button-corner-style-rounded.banner-button-style-raised.banner-button-corner-style-rounded.banner-slideshow-controls-arrows.meta-priority-date.hide-entry-author.hide-list-entry-footer.hide-sidebar-title.hide-blog-sidebar.center-navigation--info.event-thumbnails.event-thumbnail-size-32-standard.event-date-label.event-date-label-time.event-list-show-cats.event-list-date.event-list-time.event-list-address.event-icalgcal-links.event-excerpts.event-item-back-link.gallery-design-grid.aspect-ratio-auto.lightbox-style-light.gallery-navigation-bullets.gallery-info-overlay-show-on-hover.gallery-aspect-ratio-32-standard.gallery-arrow-style-no-background.gallery-transitions-fade.gallery-show-arrows.gallery-auto-crop.product-list-titles-under.product-list-alignment-center.product-item-size-11-square.product-image-auto-crop.product-gallery-size-11-square.show-product-price.show-product-item-nav.product-social-sharing.opentable-style-light.newsletter-style-light.small-button-style-solid.small-button-shape-square.medium-button-style-solid.medium-button-shape-square.large-button-style-solid.large-button-shape-square.button-style-solid.button-corner-style-square.tweak-product-quick-view-button-style-floating.tweak-product-quick-view-button-position-bottom.tweak-product-quick-view-lightbox-excerpt-display-truncate.tweak-product-quick-view-lightbox-show-arrows.tweak-product-quick-view-lightbox-show-close-button.tweak-product-quick-view-lightbox-controls-weight-light.native-currency-code-usd.collection-type-index.collection-layout-default.collection-578742586a49637b8a1ba40d.homepage.view-list.mobile-style-available.has-banner-image.index-page
-    input#mobileNavToggle.mobile-nav-toggle-box.hidden(type='checkbox', name='mobile-nav-toggle')
-    a.body-overlay(href='index.html#')
-    .sqs-announcement-bar-dropzone
-    #sidecarNav
-      #mobileNavWrapper.nav-wrapper(data-content-field='navigation-mobileNav')
-        nav#mobileNavigation
-          .index.active.homepage
-            a(href='index.html')
-              | NO-Wedding
-          .index
-            a(href='location/index.html')
-              | Location
-          .collection
-            a(href='gifts/index.html')
-              | Gifts
-          .collection
-            a(href='rsvp/index.html')
-              | RSVP
-    #siteWrapper.clearfix
-      .sqs-cart-dropzone
-      header#header.show-on-scroll(data-offset-el='.index-section', data-offset-behavior='bottom', role='banner')
-        .header-inner
-          #siteTitleWrapper.wrapper(data-content-field='site-title')
-            h1#siteTitle.site-title
-              a(href='index.html')  
-          //
-            comment the linebreak between these two elements because science
-          label.mobile-nav-toggle-label(for='mobileNavToggle')
-            .top-bar
-            .middle-bar
-            .bottom-bar
-          label.mobile-nav-toggle-label.fixed-nav-toggle-label(for='mobileNavToggle')
-            .top-bar
-            .middle-bar
-            .bottom-bar
-          //
-            comment the linebreak between these two elements because science
-          #headerNav
-            #mainNavWrapper.nav-wrapper(data-content-field='navigation-mainNav')
-              nav#mainNavigation(data-content-field='navigation-mainNav')
-                .index.active.homepage
-                  a(href='index.html')
-                    | NO-Wedding
-                .index
-                  a(href='location/index.html')
-                    | Location
-                .collection
-                  a(href='gifts/index.html')
-                    | Gifts
-                .collection
-                  a(href='rsvp/index.html')
-                    | RSVP
-            // style below blocks out the mobile nav toggle only when nav is loaded
-            style.
-              .mobile-nav-toggle-label {
-              display: inline-block !important;
-              }
-      main#page(role='main')
-        //
-          comment the linebreak between these two elements because science
-        //
-          comment the linebreak between these two elements because science
-        #content.main-content(data-content-field='main-content', data-collection-id='578742586a49637b8a1ba40d')
-          // Create index sections
-          #home.index-section(data-url-id='home', data-collection-id='5768a18dd1758ea78688f4d9', data-edit-main-image='Banner')
-            .promoted-gallery-wrapper
-            .banner-thumbnail-wrapper.has-description(data-content-field='main-image')
-              .color-overlay
-              figure#thumbnail.loading.content-fill
-                img(data-src='#{homeImage}', data-image-dimensions='5000x3333', data-image-focal-point='0.5,0.5', alt='160711_010.jpg')
-              .desc-wrapper(data-content-field='description')
-                p
-                  strong Arthur and Timberly's Wedding
-                p.wedding-date-location October 30, 2016 · Wente Vineyards, Livermore, CA
-                div.clearfix
-                  div(style="float:left; width: 50%;")
-                    p
-                      a(href='rsvp.html', class='hk-btn' style="width: 150px;") Hong Kong
-                  div(style="float:right; width: 50%;")
-                    p
-                      a(href='rsvp.html', class='hk-btn' style="width: 150px;") Macau
-            .index-section-wrapper.page-content
-              .content-inner.has-content(data-content-field='main-content')
-                #page-5768a18dd1758ea78688f4d9.sqs-layout.sqs-grid-12.columns-12(data-type='page', data-updated-on='1467174383459')
-                  .row.sqs-row
-                    .col.sqs-col-12.span-12
-                      #block-bb547699933453c589b0.sqs-block.html-block.sqs-block-html(data-block-type='2')
-                        .sqs-block-content
-                          h1.text-align-center 😍We are getting married!💑
-                      .row.sqs-row
-                        each imageData in images
-                              .col.sqs-col-4.span-4
-                                .sqs-block.image-block
-                                    img.thumb-image(src='#{imageData.thumb}')
-                      #block-yui_3_17_2_3_1466475625216_11809.sqs-block.html-block.sqs-block-html(data-block-type='2')
-                        .sqs-block-content
-                          blockquote.text-align-center Yep, its happening!
-          #arrival.index-section(data-url-id='arrival', data-collection-id='5768a506e6f2e199f342f811', data-edit-main-image='Banner')
-            .promoted-gallery-wrapper
-            .banner-thumbnail-wrapper.has-description(data-content-field='main-image')
-              .color-overlay
-              figure#thumbnail.loading.content-fill
-                img(data-src='#{hostPlaceImage}', data-image='#{hostPlaceImage}', data-image-dimensions='2216x717', data-image-focal-point='0.5,0.5', alt='Screen Shot 2016-06-20 at 7.29.38 PM.png')
-              .desc-wrapper(data-content-field='description')
-                p Come celebrate with us
-                p
-                  strong October, 30th, 2016
-                p Wente Vineyard
-            .index-section-wrapper.page-content
-              .content-inner.has-content(data-content-field='main-content')
-                #page-5768a506e6f2e199f342f811.sqs-layout.sqs-grid-12.columns-12(data-type='page', data-updated-on='1467175491284')
-                  .row.sqs-row
-                    .col.sqs-col-3.span-3
-                      #block-yui_3_17_2_1_1407189396945_18833.sqs-block.spacer-block.sqs-block-spacer.sized.vsize-1(data-block-type='21')
-                        .sqs-block-content  
-                    .col.sqs-col-6.span-6
-                      #block-4a8536c6bfcd96f2852c.sqs-block.html-block.sqs-block-html(data-block-type='2')
-                        .sqs-block-content
-                          h2.text-align-center Schedule (Temporary)
-                          p.text-align-center
-                            strong 16:30
-                            |  Arrival and sign in
-                          p.text-align-center
-                            strong 17:00
-                            |  Wedding Ceremony
-                          p.text-align-center
-                            strong 17:30
-                            |  Cocktail Hour
-                          p.text-align-center
-                            strong 19:00
-                            |  Dinner
-                          p.text-align-center
-                            strong 20:00
-                            |  Cake Cutting & Party
-                          p.text-align-center
-                            strong 22:00
-                            |  Time for Home
-                          p.text-align-center (Make sure you check back again for a finalized schedule)
-                    .col.sqs-col-3.span-3
-                      #block-yui_3_17_2_1_1407189396945_20696.sqs-block.spacer-block.sqs-block-spacer.sized.vsize-1(data-block-type='21')
-                        .sqs-block-content  
-          #wedding-day.index-section(data-url-id='wedding-day', data-collection-id='577223ebd2b85749fa670d80', data-edit-main-image='Banner')
-            .promoted-gallery-wrapper
-            .banner-thumbnail-wrapper.has-description(data-content-field='main-image')
-              .color-overlay
-              figure#thumbnail.loading.content-fill
-                img(data-src='#{footerImage}', data-image='#{footeImage}', data-image-dimensions='4500x3000', data-image-focal-point='0.5,0.5', alt='DSC08168.jpg')
-              .desc-wrapper(data-content-field='description')
-                p
-                  strong We are super excited about you joining us
-                p You should be too...
-            .index-section-wrapper.page-content
-              .content-inner.has-content(data-content-field='main-content')
-                #page-5768ab09bebafb9ef35de36d.sqs-layout.sqs-grid-12.columns-12(data-type='page', data-updated-on='1467100427949')
-                  .row.sqs-row
-                    .col.sqs-col-3.span-3
-                      #block-yui_3_17_2_1_1407260301764_80923.sqs-block.spacer-block.sqs-block-spacer.sized.vsize-1(data-block-type='21')
-                        .sqs-block-content  
-                    .col.sqs-col-6.span-6
-                      #block-yui_3_17_2_1_1407260301764_51578.sqs-block.html-block.sqs-block-html(data-block-type='2')
-                        .sqs-block-content
-                          h1.text-align-center Directions
-                          p.text-align-center Once again, its -
-                          p.text-align-center
-                            strong 5040 Arroyo Road Livermore, CA, 94550, United States
-                          p.text-align-center Expect some traffic heading over there!
-                    .col.sqs-col-3.span-3
-                      #block-yui_3_17_2_1_1407260301764_79910.sqs-block.spacer-block.sqs-block-spacer.sized.vsize-1(data-block-type='21')
-                        .sqs-block-content  
-                  .row.sqs-row
-                    .col.sqs-col-2.span-2
-                      #block-yui_3_17_2_1_1407260301764_48348.sqs-block.spacer-block.sqs-block-spacer.sized.vsize-1(data-block-type='21')
-                        .sqs-block-content  
-                    .col.sqs-col-8.span-8
-                      div#map-container
-                        div#map(style="height: 400px;")
-                      //- #block-yui_3_17_2_1_1407260301764_32675.sqs-block.map-block.sqs-block-map(data-aspect-ratio='38.9937106918239', data-block-json='{"location":{"addressTitle":"Wente Vineyards","addressLine1":"5040 Arroyo Road","addressLine2":"Livermore, CA, 94550","addressCountry":"United States","markerLat":37.6233657,"markerLng":-121.75711109999997,"mapLat":37.6233657,"mapLng":-121.75711109999997,"mapZoom":12},"vSize":null,"hSize":null,"floatDir":null,"aspectRatio":38.9937106918239,"style":1,"labels":true,"terrain":false,"controls":false}', data-block-type='4')
-                      //-   .sqs-block-content  
-                    .col.sqs-col-2.span-2
-                      #block-yui_3_17_2_1_1407260301764_49140.sqs-block.spacer-block.sqs-block-spacer.sized.vsize-1(data-block-type='21')
-                        .sqs-block-content  
-                  .row.sqs-row
-                    .col.sqs-col-3.span-3
-                      #block-yui_3_17_2_1_1407260301764_40505.sqs-block.spacer-block.sqs-block-spacer.sized.vsize-1(data-block-type='21')
-                        .sqs-block-content  
-                    .col.sqs-col-9.span-9
-                      .row.sqs-row
-                        .col.sqs-col-6.span-6
-                          .row.sqs-row
-                            .col.sqs-col-3.span-3
-                              #block-yui_3_17_2_1_1407259186037_48437.sqs-block.html-block.sqs-block-html(data-block-type='2')
-                                .sqs-block-content
-                                  h3.text-align-center  
-                                  h3.text-align-center flying
-                                  p.text-align-center Try flying to SJC, its closer
-                            .col.sqs-col-3.span-3
-                              #block-yui_3_17_2_1_1407260301764_45003.sqs-block.html-block.sqs-block-html(data-block-type='2')
-                                .sqs-block-content
-                                  h3.text-align-center  
-                                  h3.text-align-center Driving
-                                  p.text-align-center Seriously, just google map it!
-                        .col.sqs-col-3.span-3
-                          #block-yui_3_17_2_1_1407260301764_42531.sqs-block.spacer-block.sqs-block-spacer.sized.vsize-1(data-block-type='21')
-                            .sqs-block-content
-            .index-section-wrapper.page-content
-              .content-inner.has-content(data-content-field='main-content')
-                #page-577223ebd2b85749fa670d80.sqs-layout.sqs-grid-12.columns-12(data-type='page', data-updated-on='1467098859208')
-                  .row.sqs-row
-                    .col.sqs-col-3.span-3
-                      #block-yui_3_17_2_1_1407189396945_20696.sqs-block.spacer-block.sqs-block-spacer.sized.vsize-1(data-block-type='21')
-                        .sqs-block-content  
-                    .col.sqs-col-6.span-6
-                      #block-yui_3_17_2_1_1407189396945_225520.sqs-block.html-block.sqs-block-html(data-block-type='2')
-                        .sqs-block-content
-                          h2.text-align-center Have questions?
-                          h3.text-align-center Call me 
-                          p.text-align-center(dir='ltr') 408-476-5953
-                          h3.text-align-center email ME 
-                          p.text-align-center owenc.817@gmail.com
-                    .col.sqs-col-3.span-3
-                      #block-yui_3_17_2_1_1407189396945_18833.sqs-block.spacer-block.sqs-block-spacer.sized.vsize-1(data-block-type='21')
-                        .sqs-block-content  
-        //
-          comment the linebreak between these two elements because science
-      #preFooter
-        .pre-footer-inner
-          #preFooterBlocks.sqs-layout.sqs-grid-12.columns-12.empty(data-layout-label='Pre-Footer Content', data-type='block-field', data-updated-on='1406136995340')
-            .row.sqs-row
-              .col.sqs-col-12.span-12
-      footer#footer(role='contentinfo')
-        .footer-inner
-          .nav-wrapper.back-to-top-nav
-            nav
-              .back-to-top
-                a(href='index.html#header') Back to Top
-          #footerBlocks.sqs-layout.sqs-grid-12.columns-12(data-layout-label='Footer Content', data-type='block-field', data-updated-on='1466476701572')
-            .row.sqs-row
-              .col.sqs-col-12.span-12
-                #block-713fe491a2c303b33937.sqs-block.html-block.sqs-block-html(data-block-type='2')
-                  .sqs-block-content
-                    p.text-align-center See you there =)
-    script(type='text/javascript', src='/wedding/assets/site-bundle.js')
-    script(type='text/javascript', data-sqs-type='imageloader-bootstraper').
-      (function() {
-      if (window.ImageLoader) {
-      window.ImageLoader.bootstrap();
-      }
-      })();
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\\/script>')
+    script(src='js/vendor/bootstrap.min.js')
+    script(src='js/plugins.js')
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyACGHtQ_95KW0yN2nZOCNPn07VNa3pEROg')
-    script(src='/wedding/assets/map.js')
-
+    script(src='js/main.js')
+    // Google Analytics: change UA-XXXXX-X to be your site's ID.
+    script.
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');

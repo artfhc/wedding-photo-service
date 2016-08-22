@@ -64,6 +64,27 @@ var weddingImageData = [];
 weddingImageData.push({'thumb': s3Path + 'thumb-min-004.jpg', 'img': s3Path + "min-004.jpg"});
 weddingImageData.push({'thumb': s3Path + 'thumb-min-007.jpg', 'img': s3Path + "min-007.jpg"});
 weddingImageData.push({'thumb': s3Path + 'thumb-min-001.jpg', 'img': s3Path + "min-001.jpg"});
+// router.get('/wedding', function(req, res, next) {
+//   res.render('wedding/index', {
+//     layout: 'wedding/layout', 
+//     title: "Arthur and Timberly's Wedding",
+//     homeImage: s3Path + "0003.jpg",
+//     footerImage: s3Path + "wedding-footer-3.jpg",
+//     hostPlaceImage: s3Path + "wedding-hongkong.jpg",
+//     images: weddingImageData,
+//     i18n: req.t
+//   });
+// });
+
+/* GET template Under Construction  */
+router.get('/', function(req, res, next) {
+  res.render('underconstruction/index', {
+    layout: 'underconstruction/layout', 
+    title: "Arthur and Timberly's Wedding Under Construction",
+    i18n: req.t
+  });
+});
+
 router.get('/wedding', function(req, res, next) {
   res.render('wedding/index', {
     layout: 'wedding/layout', 
@@ -76,13 +97,5 @@ router.get('/wedding', function(req, res, next) {
   });
 });
 
-/* GET template Under Construction  */
-router.get('/', function(req, res, next) {
-  res.render('underconstruction/index', {
-    layout: 'underconstruction/layout', 
-    title: "Arthur and Timberly's Wedding Under Construction",
-    i18n: req.t
-  });
-});
 
 module.exports = router;
