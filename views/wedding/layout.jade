@@ -187,15 +187,15 @@ html.no-js(lang='')
       .bg-image.bg-image-wedding.bg-center-center(alt='')
         .color-overlay
       .desc-wrapper
-        h1.display-2 Arthur and Timberly's Wedding
-        p October 2nd, 2016 · 8 Pak Hok Ting Street, Shatin, Hong Kong
+        h1.display-2 #{i18n("wedding:title")}
+        p #{i18n("wedding:date_location")}
         .button-div
-          button.btn.btn-warning(type='button') Hong Kong
-          button.btn.btn-default(type='button') Macau
+          button.btn.btn-warning(type='button') #{i18n("wedding:hong_kong")}
+          button.btn.btn-default(type='button') #{i18n("wedding:macau")}
     #photo-gallery.jumbotron
       .container
         .row
-          h1.text-center.entrytitle 😍We are getting married!💑
+          h1.text-center.entrytitle #{i18n("photo_gallery:txt1")}
         .row
           .col-md-4.padding-top-bottom-15
             a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg')
@@ -207,14 +207,14 @@ html.no-js(lang='')
             a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg')
               img(title='3', alt='3', src='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg')
         .row
-          p.text-center Yep, its happening!
+          p.text-center #{i18n("photo_gallery:txt2")}
     #hk-image-section.image-container
       .bg-image-hk.bg-image-wedding.bg-center-center(alt='')
         .color-overlay
       .desc-wrapper
-        p Come celebrate with us
-        h1.display-2 October, 30th, 2016
-        p Royal Park Hong Kong Hotel
+        p #{i18n("schedule:txt1")}
+        h1.display-2 #{i18n("schedule:date")}
+        p #{i18n("schedule:location")}
     .jumbotron
       .container
         .row
@@ -222,38 +222,38 @@ html.no-js(lang='')
         .row.spaces
           p.text-center
             strong 16:30
-            |  Arrival and sign in
+            |  #{i18n("schedule:1630")}
           p.text-center
             strong 17:00
-            |  Wedding Ceremony
+            |  #{i18n("schedule:1700")}
           p.text-center
             strong 17:30
-            |  Cocktail Hour
+            |  #{i18n("schedule:1730")}
           p.text-center
             strong 19:00
-            |  Dinner
+            |  #{i18n("schedule:1900")}
           p.text-center
             strong 20:00
-            |  Cake Cutting & Party
+            |  #{i18n("schedule:2000")}
           p.text-center
             strong 22:00
-            |  Time for Home
-          p.text-center (Make sure you check back again for a finalized schedule)
+            |  #{i18n("schedule:2200")}
+          p.text-center #{i18n("schedule:txt2")}
     #footer-image-section.image-container
       .bg-image-footer.bg-image-wedding.bg-center-center(alt='')
         .color-overlay
       .desc-wrapper
-        h1.display-2 We are super excited about you joining us
-        p You should be too...
+        h1.display-2 #{i18n("footer:title")}
+        p #{i18n("footer:txt1")}
     .jumbotron
       .container
         .row
-          h2.text-center.entrytitle Directions
+          h2.text-center.entrytitle #{i18n("directions:title")}
         .row.spaces
-          p.text-center Once again, its -
+          p.text-center #{i18n("directions:txt1")}
           p.text-center
-            strong 8 Pak Hok Ting Street, Shatin, Hong Kong
-          p.text-center Expect some traffic heading over there!
+            strong #{i18n("directions:txt2")}
+          p.text-center #{i18n("directions:txt3")}
         .row.spaces
           .col-md-2
           .col-md-8
@@ -261,17 +261,17 @@ html.no-js(lang='')
           .col-md-2
         .row.spaces
           .col-md-6
-            p.text-center.sm-heading MTR
-            p.text-center Sha Tin Station
+            p.text-center.sm-heading #{i18n("directions:mtr")}
+            p.text-center #{i18n("directions:mtr_txt")}
           .col-md-6
-            p.text-center.sm-heading Driving
-            p.text-center Seriously, just google map it!
+            p.text-center.sm-heading #{i18n("directions:driving")}
+            p.text-center #{i18n("directions:driving_txt")}
         .row.spaces
-          h4.text-center Have questions?
-          p.text-center.sm-heading Facebook me
+          h4.text-center #{i18n("directions:questions")}
+          p.text-center.sm-heading #{i18n("directions:facebook")}
           p.text-center
             a(href='https://www.facebook.com/artfhc') https://www.facebook.com/artfhc
-          p.text-center.sm-heading Email Me
+          p.text-center.sm-heading #{i18n("directions:email")}
           p.text-center
             a(href='mailto:artfhc@gmail.com') artfhc@gmail.com
     //
@@ -297,7 +297,13 @@ html.no-js(lang='')
       .footer-inner.container
         .row
           .col-md-12
-            p.text-center See you there! =)
+              form(id="language-form")
+                p.text-center #{i18n("footer:see_you_there")}
+                p.text-center
+                  select(name="language-select")
+                    option(value="") Select a Language
+                    option(value="en") English
+                    option(value="zh") Chinese
     // /container
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     script.
