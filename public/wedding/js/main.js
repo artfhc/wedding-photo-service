@@ -3,7 +3,9 @@ google.maps.event.addDomListener(window, 'load', function() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 22.379596, lng: 114.186401},
     zoom: 13,
-    mapTypeId: 'roadmap'
+    mapTypeId: 'roadmap',
+    scrollwheel: false,
+    zoomControl: false
   });
 
   var latLng = new google.maps.LatLng(22.379596, 114.186401);
