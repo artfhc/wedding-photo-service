@@ -14,6 +14,11 @@ body {
   font-family: "freight-sans-pro";
 }
 
+.padding-top-bottom-15 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .sm-heading {
   color: #f9b862;
   line-height: 1.2em;
@@ -176,6 +181,16 @@ img {
   }
   #footer-image-section .desc-wrapper { padding-top: 12%; }
 }
+
+footer {
+  color: rgba(255,255,255,.4);
+  background-color: #08001a;
+}
+
+.footer-inner {
+  padding: 64px 32px;
+  max-width: 1020px;
+}
         </style>
         <link rel="stylesheet" href="css/poptrox.css">
         <link rel="stylesheet" href="css/main.css">
@@ -214,18 +229,18 @@ img {
         <div class="row">
           <h1 class="text-center entrytitle">😍We are getting married!💑</h1>
         </div>
-        <div class="row spaces">
-          <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-4 padding-top-bottom-15">
             <a href="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg">
               <img title="1" alt="1" src="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg"/>
             </a>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 padding-top-bottom-15">
             <a href="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg">
               <img title="2" alt="2" src="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg"/>
             </a>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 padding-top-bottom-15">
             <a href="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg">
               <img title="3" alt="3" src="https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg"/>
             </a>
@@ -333,10 +348,14 @@ img {
         </div>
       </div> -->
 
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2015</p>
+      <footer id="footer">
+        <div class="footer-inner container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="text-center">See you there! =)</p>
+            </div>
+          </div>
+        </div>
       </footer>
     </div> <!-- /container -->        
 
