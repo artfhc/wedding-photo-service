@@ -77,17 +77,17 @@ weddingImageData.push({'thumb': s3Path + 'thumb-min-001.jpg', 'img': s3Path + "m
 // });
 
 /* GET template Under Construction  */
-router.get('/', function(req, res, next) {
-  res.render('underconstruction/index', {
-    layout: 'underconstruction/layout', 
-    title: "Arthur and Timberly's Wedding Under Construction",
-    i18n: req.t
-  });
-});
+// router.get('/', function(req, res, next) {
+//   res.render('underconstruction/index', {
+//     layout: 'underconstruction/layout', 
+//     title: "Arthur and Timberly's Wedding Under Construction",
+//     i18n: req.t
+//   });
+// });
 
-router.get('/wedding', function(req, res, next) {
-  res.render('wedding/index', {
-    layout: 'wedding/layout', 
+router.get('/', function(req, res, next) {
+  res.render('index', {
+    layout: 'layout', 
     title: "Arthur and Timberly's Wedding",
     homeImage: s3Path + "0003.jpg",
     footerImage: s3Path + "wedding-footer-3.jpg",

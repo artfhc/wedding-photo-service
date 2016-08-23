@@ -1,0 +1,190 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+    font-family: "freight-sans-pro";
+}
+.padding-top-bottom-15 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.sm-heading {
+    color: #f9b862;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-style: normal;
+}
+.jumbotron {
+    margin-bottom: 0;
+}
+.image-container {
+    position: relative;
+}
+.bg-image {
+    /* image specified in seperate class  */
+    
+    height: 520px;
+    width: 100%;
+    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/0003.jpg);
+}
+.bg-image-hk {
+    /* image specified in seperate class  */
+    
+    height: 448px;
+    width: 100%;
+    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-hongkong.jpg);
+}
+.bg-image-footer {
+    /* image specified in seperate class  */
+    
+    height: 441px;
+    width: 100%;
+    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-footer-3.jpg);
+}
+.bg-image-wedding {
+    /* lt ie8 */
+    
+    -ms-background-position-x: center;
+    -ms-background-position-y: bottom;
+    /* default - may override with classes or media query */
+    
+    background-position: center bottom;
+    /* scale bg image proportionately */
+    
+    background-size: cover;
+    /* ie8 polyfill */
+    
+    -ms-behavior: url(backgroundsize.min.htc);
+    /* prevent scaling past src width (or not) */
+    /* max-width: 1200px; */
+}
+.bg-center-center {
+    -ms-background-position-x: center;
+    -ms-background-position-y: center;
+    background-position: center center;
+}
+/* the "padding trick" thanks to Corey Worrell */
+
+.background {
+    height: 0;
+    padding-bottom: 40%;
+    background-position: center bottom;
+    /* scale bg image proportionately */
+    
+    background-size: cover;
+    /* or 100% */
+}
+.text-center {
+    text-align: center;
+}
+.entrytitle {
+    font-size: 42px;
+    line-height: 1.2em;
+    text-transform: none;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-style: normal;
+}
+.color-overlay {
+    position: inline-block;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(26, 17, 34, .6);
+    z-index: 99;
+}
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.desc-wrapper {
+    color: #FFF;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 10%;
+}
+#footer-image-section .desc-wrapper {
+    padding-top: 8%;
+}
+.desc-wrapper p {
+    font-size: 22px;
+    line-height: 1.5em;
+    text-transform: none;
+    letter-spacing: 1.3px;
+    font-weight: 300;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    transform: translateZ(0px);
+    margin: 20px auto;
+}
+.button-div {
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+}
+.jumbotron {
+    background-color: #FFF;
+}
+img {
+    width: 100%;
+}
+.spaces {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+/* example media query */
+
+@media only screen and (min-width: 768px) {
+    .bg-image {
+        height: 600px;
+    }
+    .bg-image-hk {
+        height: 448px;
+    }
+    .bg-image-footer {
+        height: 411px;
+    }
+    .desc-wrapper {
+        padding-top: 15%;
+    }
+    #hk-image-section .desc-wrapper {
+        padding-top: 12%;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .bg-image {
+        height: 680px;
+    }
+    .bg-image-hk {
+        height: 580px;
+    }
+    .bg-image-footer {
+        height: 617px;
+    }
+    .desc-wrapper {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    #footer-image-section .desc-wrapper {
+        padding-top: 12%;
+    }
+}
+footer {
+    color: rgba(255, 255, 255, .4);
+    background-color: #08001a;
+}
+.footer-inner {
+    padding: 64px 32px;
+    max-width: 1020px;
+}

@@ -1,7 +1,0 @@
-.inner.gallery
-  each imagerow in pageData.images
-    .row(class='0%') 
-      each image in imagerow
-        .3u(class='12u(mobile)')
-          a.image.fit(href='#{image.full}')
-            img(src='#{image.thumb}', alt='#{image.description}', title='#{image.title}')

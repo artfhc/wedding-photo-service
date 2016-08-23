@@ -1,7 +1,145 @@
 doctype html
-html
+html.no-js(lang='')
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title Arthur Timber Wedding
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/main.css')
+    script(src='js/vendor/modernizr-2.8.3.min.js')
+    script(src='js/vendor/typekit.js')
+    script.
+      try {
+      Typekit.load();
+      } catch (e) {}
   body
-    block content
+    //if lt IE 8
+      p.browserupgrade
+        | You are using an 
+        strong outdated
+        |  browser. Please 
+        a(href='http://browsehappy.com/') upgrade your browser
+        |  to improve your experience.
+    // Main jumbotron for a primary marketing message or call to action
+    .image-container
+      .bg-image.bg-image-wedding.bg-center-center(alt='')
+        .color-overlay
+      .desc-wrapper
+        h1.display-2 #{i18n("wedding:title")}
+        p #{i18n("wedding:date_location")}
+        .button-div
+          button.btn.btn-warning(type='button') #{i18n("wedding:hong_kong")}
+          &nbsp;
+          button.btn.btn-default(type='button') #{i18n("wedding:macau")}
+    #photo-gallery.jumbotron
+      .container
+        .row
+          h1.text-center.entrytitle #{i18n("photo_gallery:txt1")}
+        .row
+          .col-md-4.padding-top-bottom-15
+            a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg')
+              img(title='1', alt='1', src='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg')
+          .col-md-4.padding-top-bottom-15
+            a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg')
+              img(title='2', alt='2', src='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg')
+          .col-md-4.padding-top-bottom-15
+            a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg')
+              img(title='3', alt='3', src='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg')
+        .row
+          p.text-center #{i18n("photo_gallery:txt2")}
+    #hk-image-section.image-container
+      .bg-image-hk.bg-image-wedding.bg-center-center(alt='')
+        .color-overlay
+      .desc-wrapper
+        p #{i18n("schedule:txt1")}
+        h1.display-2 #{i18n("schedule:date")}
+        p #{i18n("schedule:location")}
+    .jumbotron
+      .container
+        .row
+          h2.text-center.entrytitle Schedule (Temporary)
+        .row.spaces
+          p.text-center
+            strong 16:30
+            |  #{i18n("schedule:1630")}
+          p.text-center
+            strong 17:00
+            |  #{i18n("schedule:1700")}
+          p.text-center
+            strong 17:30
+            |  #{i18n("schedule:1730")}
+          p.text-center
+            strong 19:00
+            |  #{i18n("schedule:1900")}
+          p.text-center
+            strong 20:00
+            |  #{i18n("schedule:2000")}
+          p.text-center
+            strong 22:00
+            |  #{i18n("schedule:2200")}
+          p.text-center #{i18n("schedule:txt2")}
+    #footer-image-section.image-container
+      .bg-image-footer.bg-image-wedding.bg-center-center(alt='')
+        .color-overlay
+      .desc-wrapper
+        h1.display-2 #{i18n("footer:title")}
+        p #{i18n("footer:txt1")}
+    .jumbotron
+      .container
+        .row
+          h2.text-center.entrytitle #{i18n("directions:title")}
+        .row.spaces
+          p.text-center #{i18n("directions:txt1")}
+          p.text-center
+            strong #{i18n("directions:txt2")}
+          p.text-center #{i18n("directions:txt3")}
+        .row.spaces
+          .col-md-2
+          .col-md-8
+            #map(style='height: 400px;')
+          .col-md-2
+        .row.spaces
+          .col-md-6
+            p.text-center.sm-heading #{i18n("directions:mtr")}
+            p.text-center #{i18n("directions:mtr_txt")}
+          .col-md-6
+            p.text-center.sm-heading #{i18n("directions:driving")}
+            p.text-center #{i18n("directions:driving_txt")}
+        .row.spaces
+          h4.text-center #{i18n("directions:questions")}
+          p.text-center.sm-heading #{i18n("directions:facebook")}
+          p.text-center
+            a(href='https://www.facebook.com/artfhc') https://www.facebook.com/artfhc
+          p.text-center.sm-heading #{i18n("directions:email")}
+          p.text-center
+            a(href='mailto:artfhc@gmail.com') artfhc@gmail.com
+    footer#footer
+      .footer-inner.container
+        .row
+          .col-md-12
+              form(id="language-form")
+                p.text-center #{i18n("footer:see_you_there")}
+                p.text-center
+                  select(name="language-select")
+                    option(value="") Select a Language
+                    option(value="en") English
+                    option(value="zh") Chinese
+    // /container
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\\/script>')
+    script(src='js/vendor/bootstrap.min.js')
+    script(src='js/plugins.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyACGHtQ_95KW0yN2nZOCNPn07VNa3pEROg')
+    script(src='js/main.js')
+    // Google Analytics: change UA-XXXXX-X to be your site's ID.
+    script.
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
