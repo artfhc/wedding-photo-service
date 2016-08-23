@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var imageDataDescription = require('../data/imagedescription.json');
+var getCookie = require('../helpers/getCookie');
 var s3Path = 'https://s3-us-west-2.amazonaws.com/propose-photos/';
 var s3ThumbnailPrefix = 'thumb-';
 
@@ -85,6 +86,15 @@ weddingImageData.push({'thumb': s3Path + 'thumb-min-001.jpg', 'img': s3Path + "m
 //   });
 // });
 
+// Get the location cookie
+var location = getCookie(req, 'location');
+
+// If location cookie is empty, create it and default to HK
+if(location == '' || location == null) {
+  location = 'HK';
+  res.cookie('location', location);
+}
+
 router.get('/', function(req, res, next) {
   res.render('index', {
     layout: 'layout', 
@@ -93,6 +103,7 @@ router.get('/', function(req, res, next) {
     footerImage: s3Path + "wedding-footer-3.jpg",
     hostPlaceImage: s3Path + "wedding-hongkong.jpg",
     images: weddingImageData,
+    location: location,
     i18n: req.t
   });
 });
