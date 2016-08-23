@@ -2,10 +2,18 @@
 google.maps.event.addDomListener(window, 'load', function() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 22.379596, lng: 114.186401},
-    zoom: 13,
+    zoom: 18,
     mapTypeId: 'roadmap',
     scrollwheel: false,
-    zoomControl: false
+    zoomControl: false,
+    draggable: false,
+    styles:[{
+      featureType:"poi",
+      elementType:"labels",
+      stylers:[{
+          visibility:"off"
+      }]
+    }]
   });
 
   var latLng = new google.maps.LatLng(22.379596, 114.186401);
@@ -36,8 +44,10 @@ google.maps.event.addDomListener(window, 'load', function() {
     infowindow.open(map, marker);
   });
 
-  map.setZoom(13);
-  map.setCenter(latLng);
+  map.setZoom(18);
+
+  // shift map slightly top right
+  map.setCenter(new google.maps.LatLng(22.3797091,114.186903));
 
   // window.addEventListener("resize", function() {
   //   map.setCenter(latLng);
