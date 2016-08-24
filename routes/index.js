@@ -92,9 +92,9 @@ router.get('/', function(req, res, next) {
   // Get the location cookie
   var location = getCookie(req, 'location');
 
-  // If location cookie is empty, create it and default to HK
+  // If location cookie is empty, create it and default to hk
   if(location == '' || location == null) {
-    location = 'HK';
+    location = 'hk';
     res.cookie('location', location);
   }
 

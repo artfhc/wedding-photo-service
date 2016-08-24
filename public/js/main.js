@@ -62,7 +62,7 @@ google.maps.event.addDomListener(window, 'load', function() {
     overlayColor: '#0a1919',
     overlayOpacity: 0.75,//(skel.vars.IEVersion < 9 ? 0 : 0.75),
     usePopupDefaultStyling: false,
-    usePopupCaption: true,
+    usePopupCaption: false,
     popupLoaderText: '',
     windowMargin: 10,
     usePopupNav: true
@@ -82,3 +82,17 @@ google.maps.event.addDomListener(window, 'load', function() {
     window.location.href = window.location.href;
   });
 }(jQuery));
+
+// Location
+(function($) {
+  $('.hk-btn').click(function() {
+    document.cookie = 'location=hk';
+    window.location.href = window.location.href;
+  });
+
+  $('.macau-btn').click(function() {
+    document.cookie = 'location=macau';
+    window.location.href = window.location.href;
+  });
+}(jQuery));
+

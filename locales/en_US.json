@@ -1,6 +1,6 @@
 {
-  "wedding:title": "Arthur and Timberly's Wedding",
-  "wedding:date_location": "October 2nd, 2016 · 8 Pak Hok Ting Street, Shatin, Hong Kong",
+  "hk:wedding:title": "Arthur and Timberly's Wedding",
+  "hk:wedding:date_location": "October 2nd, 2016 · 8 Pak Hok Ting Street, Shatin, Hong Kong",
   "wedding:hong_kong": "Hong Kong",
   "wedding:macau": "Macau",
   "photo_gallery:txt1": "😍We are getting married!💑",
@@ -29,5 +29,8 @@
   "directions:questions": "Have questions?",
   "directions:facebook": "Facebook Me",
   "directions:email": "Email Me",
-  "footer:see_you_there": "See you there! =)"
+  "footer:see_you_there": "See you there! =)",
+
+  "macau:wedding:title": "Arthur and Timberly's Wedding",
+  "macau:wedding:date_location": "Avenida Dr Sun Yat Sen, NAPE Macau, China"
 }

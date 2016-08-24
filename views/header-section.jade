@@ -3,9 +3,11 @@
   .bg-image.bg-image-wedding.bg-center-center(alt='')
     .color-overlay
   .desc-wrapper
-    h1.display-2 #{i18n("wedding:title")}
-    p #{i18n("wedding:date_location")}
+    h1.display-2 #{i18n(location + ':wedding:title')}
+    p #{i18n(location + ':wedding:date_location')}
     .button-div
-      button.btn.btn-warning(type='button') #{i18n("wedding:hong_kong")}
+      button.btn.hk-btn(class=(location == "hk" ? "btn-warning" : "btn-default"), type='button')
+        | #{i18n("wedding:hong_kong")}
       &nbsp;
-      button.btn.btn-default(type='button') #{i18n("wedding:macau")}
+      button.btn.macau-btn(class=(location == "hk" ? "btn-default" : "btn-warning"), type='button') 
+        | #{i18n("wedding:macau")}

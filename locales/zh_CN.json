@@ -1,5 +1,5 @@
 {
-  "wedding:title": "Arthur and Timberly 結婚",
+  "hk:wedding:title": "Arthur and Timberly 結婚",
   "wedding:date_location": "October 2nd, 2016 · 8 Pak Hok Ting Street, Shatin, Hong Kong",
   "wedding:hong_kong": "Hong Kong",
   "wedding:macau": "Macau",
@@ -29,5 +29,7 @@
   "directions:questions": "Have questions?",
   "directions:facebook": "Facebook Me",
   "directions:email": "Email Me",
-  "footer:see_you_there": "See you there! =)"
+  "footer:see_you_there": "See you there! =)",
+
+  "macau:wedding:title": "Arthur and Timberly's Wedding"
 }
