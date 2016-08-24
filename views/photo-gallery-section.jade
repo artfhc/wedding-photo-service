@@ -1,0 +1,20 @@
+#photo-gallery.jumbotron
+  .container
+    .row
+      h1.text-center.entrytitle #{i18n("photo_gallery:txt1")}
+    .row
+      each image in images
+        .col-md-4.padding-top-bottom-15
+          a(href='#{image.img}')
+            img(title='', alt='', src='#{image.thumb}')
+      //- .col-md-4.padding-top-bottom-15
+      //-   a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg')
+      //-     img(title='1', alt='1', src='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-004.jpg')
+      //- .col-md-4.padding-top-bottom-15
+      //-   a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg')
+      //-     img(title='2', alt='2', src='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-007.jpg')
+      //- .col-md-4.padding-top-bottom-15
+      //-   a(href='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg')
+      //-     img(title='3', alt='3', src='https://s3-us-west-2.amazonaws.com/propose-photos/thumb-min-001.jpg')
+    .row
+      p.text-center #{i18n("photo_gallery:txt2")}

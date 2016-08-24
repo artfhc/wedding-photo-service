@@ -1,0 +1,46 @@
+#footer-image-section.image-container
+  .bg-image-footer.bg-image-wedding.bg-center-center(alt='')
+    .color-overlay
+  .desc-wrapper
+    h1.display-2 #{i18n("footer:title")}
+    p #{i18n("footer:txt1")}
+.jumbotron
+  .container
+    .row
+      h2.text-center.entrytitle #{i18n("directions:title")}
+    .row.spaces
+      p.text-center #{i18n("directions:txt1")}
+      p.text-center
+        strong #{i18n("directions:txt2")}
+      p.text-center #{i18n("directions:txt3")}
+    .row.spaces
+      .col-md-2
+      .col-md-8
+        #map(style='height: 400px;')
+      .col-md-2
+    .row.spaces
+      .col-md-6
+        p.text-center.sm-heading #{i18n("directions:mtr")}
+        p.text-center #{i18n("directions:mtr_txt")}
+      .col-md-6
+        p.text-center.sm-heading #{i18n("directions:driving")}
+        p.text-center #{i18n("directions:driving_txt")}
+    .row.spaces
+      h4.text-center #{i18n("directions:questions")}
+      p.text-center.sm-heading #{i18n("directions:facebook")}
+      p.text-center
+        a(href='https://www.facebook.com/artfhc') https://www.facebook.com/artfhc
+      p.text-center.sm-heading #{i18n("directions:email")}
+      p.text-center
+        a(href='mailto:artfhc@gmail.com') artfhc@gmail.com
+footer#footer
+  .footer-inner.container
+    .row
+      .col-md-12
+          form(id="language-form")
+            p.text-center #{i18n("footer:see_you_there")}
+            p.text-center
+              select(name="language-select")
+                option(value="") Select a Language
+                option(value="en") English
+                option(value="zh") Chinese

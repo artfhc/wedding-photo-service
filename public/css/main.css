@@ -115,8 +115,13 @@ p {
     padding-top: 10%;
 }
 #footer-image-section .desc-wrapper {
-    padding-top: 8%;
+    padding-top: 10%;
 }
+
+#footer-image-section .desc-wrapper .display-2 {
+    font-size: 4.0rem;
+}
+
 .desc-wrapper p {
     font-size: 22px;
     line-height: 1.5em;
@@ -160,6 +165,9 @@ img {
     }
     #hk-image-section .desc-wrapper {
         padding-top: 12%;
+    }
+    #footer-image-section .desc-wrapper .display-2 {
+        font-size: 5.5rem;
     }
 }
 @media only screen and (min-width: 1200px) {
