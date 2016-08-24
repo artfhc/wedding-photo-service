@@ -66,6 +66,11 @@ body {
     -ms-background-position-y: center;
     background-position: center center;
 }
+.bg-center-top {
+    -ms-background-position-x: center;
+    -ms-background-position-y: top;
+    background-position: top center;
+}
 /* the "padding trick" thanks to Corey Worrell */
 
 .background {
@@ -147,6 +152,11 @@ img {
 .spaces {
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.description {
+    line-height: 1.5em;
+    font-size: 22px;
 }
 /* example media query */
 
