@@ -86,16 +86,18 @@ weddingImageData.push({'thumb': s3Path + 'thumb-min-001.jpg', 'img': s3Path + "m
 //   });
 // });
 
-// Get the location cookie
-var location = getCookie(req, 'location');
 
-// If location cookie is empty, create it and default to HK
-if(location == '' || location == null) {
-  location = 'HK';
-  res.cookie('location', location);
-}
 
 router.get('/', function(req, res, next) {
+  // Get the location cookie
+  var location = getCookie(req, 'location');
+
+  // If location cookie is empty, create it and default to HK
+  if(location == '' || location == null) {
+    location = 'HK';
+    res.cookie('location', location);
+  }
+
   res.render('index', {
     layout: 'layout', 
     title: "Arthur and Timberly's Wedding",
