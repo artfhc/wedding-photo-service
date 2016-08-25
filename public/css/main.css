@@ -1,3 +1,4 @@
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -51,6 +52,11 @@ body {
     width: 100%;
     background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-footer-3.jpg);
 }
+.bg-image-rsvp {
+    height: 550px;
+    width: 100%;
+    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/rsvp-1.jpg);
+}
 .bg-image-wedding {
     /* lt ie8 */
     
@@ -77,6 +83,11 @@ body {
     -ms-background-position-x: center;
     -ms-background-position-y: top;
     background-position: top center;
+}
+.bg-center-bottom {
+    -ms-background-position-x: center;
+    -ms-background-position-y: bottom;
+    background-position: bottom center;
 }
 /* the "padding trick" thanks to Corey Worrell */
 

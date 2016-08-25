@@ -30,6 +30,9 @@
   "hk:schedule:desc": "Come witness our Wedding Ceremony at 5:30pm in the hotel. After that we will have Mahjong and Photobooth before dinner serve. Menu coming soon :D",
   "hk:directions:txt2": "8 Pak Hok Ting Street, Shatin, Hong Kong",
   "hk:directions:txt3": "Sha Tin Station by MTR",
+  "hk:rsvp:title": "RSVP",
+  "hk:rsvp:description": "Please respond by September 20th",
+
   "macau:wedding:option": "Macau",
   "macau:schedule:txt1": "Come celebrate with us",
   "macau:schedule:date": "October, 15nd, 2016",
@@ -51,6 +54,8 @@
   "macau:wedding:title": "Arthur and Timberly's Wedding",
   "macau:wedding:date_location": "October 15th, 2016 · Avenida Dr Sun Yat Sen Nape, Macau",
   "macau:directions:txt3": "next to MGM and Wing Lei",
+  "macau:rsvp:title": "RSVP",
+  "macau:rsvp:description": "Please respond by Octorber 1st",
   
   "rsvp:txt1": "We will be having lots of yummy food and plenty of drinks after the ceremony, but we need to reserve all that ahead of time. So make sure you RSVP as soon as possible!",
   "rsvp:name": "Name",

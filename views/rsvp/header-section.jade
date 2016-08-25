@@ -1,13 +1,7 @@
 // Main jumbotron for a primary marketing message or call to action
 .image-container
-  .bg-image.bg-image-wedding.bg-center-center(alt='')
+  .bg-image-rsvp.bg-image-wedding.bg-center-bottom(alt='')
     .color-overlay
   .desc-wrapper
-    h1.display-2 #{i18n(location + ':wedding:title')}
-    p #{i18n(location + ':wedding:date_location')}
-    .button-div
-      button.btn.hk-btn(class=(location == "hk" ? "btn-warning" : "btn-default"), type='button')
-        | #{i18n("wedding:hong_kong")}
-      &nbsp;
-      button.btn.macau-btn(class=(location == "hk" ? "btn-default" : "btn-warning"), type='button') 
-        | #{i18n("wedding:macau")}
+    h1.display-2 #{i18n(location + ':rsvp:title')}
+    p #{i18n(location + ':rsvp:description')}
