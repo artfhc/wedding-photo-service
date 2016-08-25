@@ -28,7 +28,6 @@ app.use(i18n.middleware());
 app.use(function(req, res, next) {
   // Get the location cookie
   var location = getCookie(req, 'location');
-  console.log(location);
 
   // If location cookie is empty, create it and default to hk
   if(location == '' || location == null) {

@@ -263,3 +263,47 @@ footer {
     display: none;
     text-align: center;
 }
+
+
+/* NAVBAR */
+
+#wedding-navbar {
+    padding: 20px;
+}
+
+#wedding-navbar button {
+    color: #ffce8f;
+    outline: none;
+}
+
+#wedding-navbar button:hover {
+    color: rgba(255,206,143,.5);
+}
+
+#wedding-navbar a {
+    font-family: "freight-sans-pro";
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1em;
+    color: #ffce8f;
+    display: block;
+    padding: .75em 1em;
+}
+
+#wedding-navbar a.active {
+    color: rgba(255,206,143,.5);
+}
+
+#wedding-navbar a:hover {
+    color: rgba(255,206,143,.5);
+}
+
+@media (max-width: 543px) {
+    #wedding-navbar #navbar-header ul {
+        width: 100%;
+    }
+}

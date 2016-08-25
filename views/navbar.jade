@@ -1,0 +1,24 @@
+nav#wedding-navbar.navbar.navbar-light.bg-faded.navbar-fixed-top(style="background-color: rgba(8,0,26,.6);")
+  button.navbar-toggler.hidden-sm-up.collapsed(type='button', data-toggle='collapse', data-target='#navbar-header', aria-controls='navbar-header', aria-expanded='false')
+    | ☰
+  #navbar-header.navbar-toggleable-xs.collapse(aria-expanded='false', style='height: 0px;')
+    //a.navbar-brand(href='#') Navbar
+    ul.nav.navbar-nav.pull-xs-right
+      //- li.nav-item.active
+      //-   a.nav-link(href='#')
+      //-     | Home 
+      //-     span.sr-only (current)
+      li.nav-item
+        if (url == '/')
+          a.nav-link(href='/rsvp') RSVP
+        else
+          a.nav-link(href='/') Home
+      li.nav-item
+        a.nav-link(class=(language == 'en' ? 'active' : 'english-btn'), href='javascript:void(0);') 
+          | English
+      li.nav-item
+        a.nav-link(class=(language == 'zh' ? 'active' : 'chinese-btn'), href='javascript:void(0);')
+          | Chinese
+    //- form.form-inline.pull-xs-right
+    //-   input.form-control(type='text', placeholder='Search')
+    //-   button.btn.btn-outline-success(type='submit') Search

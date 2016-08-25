@@ -95,7 +95,9 @@ router.get('/', function(req, res, next) {
     hostPlaceImage: s3Path + "wedding-hongkong.jpg",
     images: weddingImageData,
     location: req.location,
-    i18n: req.t
+    i18n: req.t,
+    url: req.url,
+    language: req.i18n.language
   });
 });
 
@@ -108,7 +110,9 @@ router.get('/rsvp', function(req, res, next) {
     hostPlaceImage: s3Path + "wedding-hongkong.jpg",
     images: weddingImageData,
     location: req.location,
-    i18n: req.t
+    i18n: req.t,
+    url: req.url,
+    language: req.i18n.language
   });
 });
 

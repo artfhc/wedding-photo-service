@@ -76,16 +76,28 @@ try {
 
 // Language
 (function($) {
-  $('select[name="language-select"]').change(function(ev) {
-    var $this = $(this);
-    if($this.val() == 'en')
-      document.cookie = 'locale=en_US';
-    else if ($this.val() == 'zh')
-      document.cookie = 'locale=zh_CN';
-    else
-      return false;
+  // $('select[name="language-select"]').change(function(ev) {
+  //   var $this = $(this);
+  //   if($this.val() == 'en')
+  //     document.cookie = 'locale=en_US';
+  //   else if ($this.val() == 'zh')
+  //     document.cookie = 'locale=zh_CN';
+  //   else
+  //     return false;
+  //   window.location.href = window.location.href;
+  // });
+  $('a.english-btn').click(function(event) {
+    event.preventDefault();
+    document.cookie = 'locale=en_US';
     window.location.href = window.location.href;
   });
+
+  $('a.chinese-btn').click(function(event) {
+    event.preventDefault();
+    document.cookie = 'locale=zh_CN';
+    window.location.href = window.location.href;
+  });
+
 }(jQuery));
 
 // Location
