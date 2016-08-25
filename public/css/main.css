@@ -37,6 +37,13 @@ body {
     width: 100%;
     background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-hongkong.jpg);
 }
+.bg-image-macau {
+    /* image specified in seperate class  */
+    
+    height: 600px;
+    width: 100%;
+    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-macau.jpg);
+}
 .bg-image-footer {
     /* image specified in seperate class  */
     
@@ -156,7 +163,7 @@ img {
 
 .description {
     line-height: 1.5em;
-    font-size: 22px;
+    font-size: 20px;
 }
 /* example media query */
 
