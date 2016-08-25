@@ -1,58 +1,63 @@
 // Google Maps APIs
-google.maps.event.addDomListener(window, 'load', function() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 22.379596, lng: 114.186401},
-    zoom: 18,
-    mapTypeId: 'roadmap',
-    scrollwheel: false,
-    zoomControl: false,
-    draggable: false,
-    styles:[{
-      featureType:"poi",
-      elementType:"labels",
-      stylers:[{
-          visibility:"off"
+try {
+  google.maps.event.addDomListener(window, 'load', function() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 22.379596, lng: 114.186401},
+      zoom: 18,
+      mapTypeId: 'roadmap',
+      scrollwheel: false,
+      zoomControl: false,
+      draggable: false,
+      styles:[{
+        featureType:"poi",
+        elementType:"labels",
+        stylers:[{
+            visibility:"off"
+        }]
       }]
-    }]
+    });
+
+    var latLng = new google.maps.LatLng(22.379596, 114.186401);
+    var marker = new google.maps.Marker({
+      map: map,
+      title: 'Royal Park Chinese Restaurant, Hong Kong',
+      position: latLng
+    });
+
+    var contentString = 
+      '<div>' + 
+        '<p>Royal Park Chinese Restaurant</p>' +
+        '<p>8 Pak Hok Ting Street, Shatin, Hong Kong</p>' +
+        '<p><a href="http://www.royalpark.com.hk" target="_blank">http://www.royalpark.com.hk</a>' +
+      '</div>';
+
+    var contentString2 = 
+      '<div>' + 
+        '<p>Mandarin Oriental</p>' +
+        '<p>Mandarin Oriental, Macau Avenida Dr Sun Yat Sen, NAPE, Macau</p>' +
+        '<p><a href="http://www.mandarinoriental.com/" target="_blank">http://www.mandarinoriental.com/macau</a>' +
+      '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+
+    map.setZoom(18);
+
+    // shift map slightly top right
+    map.setCenter(new google.maps.LatLng(22.3797091,114.186903));
+
+    // window.addEventListener("resize", function() {
+    //   map.setCenter(latLng);
+    // });
   });
+} catch(err) {
 
-  var latLng = new google.maps.LatLng(22.379596, 114.186401);
-  var marker = new google.maps.Marker({
-    map: map,
-    title: 'Royal Park Chinese Restaurant, Hong Kong',
-    position: latLng
-  });
+}
 
-  var contentString = 
-    '<div>' + 
-      '<p>Royal Park Chinese Restaurant</p>' +
-      '<p>8 Pak Hok Ting Street, Shatin, Hong Kong</p>' +
-      '<p><a href="http://www.royalpark.com.hk" target="_blank">http://www.royalpark.com.hk</a>' +
-    '</div>';
-
-  var contentString2 = 
-    '<div>' + 
-      '<p>Mandarin Oriental</p>' +
-      '<p>Mandarin Oriental, Macau Avenida Dr Sun Yat Sen, NAPE, Macau</p>' +
-      '<p><a href="http://www.mandarinoriental.com/" target="_blank">http://www.mandarinoriental.com/macau</a>' +
-    '</div>';
-
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  });
-  marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
-
-  map.setZoom(18);
-
-  // shift map slightly top right
-  map.setCenter(new google.maps.LatLng(22.3797091,114.186903));
-
-  // window.addEventListener("resize", function() {
-  //   map.setCenter(latLng);
-  // });
-});
 
 // Poptrox
 (function($) {
@@ -96,3 +101,17 @@ google.maps.event.addDomListener(window, 'load', function() {
   });
 }(jQuery));
 
+// RSVP Form
+(function($) {
+  $('.submit-btn').click(function(){
+    // Validate here...
+    var success = true;
+
+    $('form').submit();
+
+    if (success)
+      $('.success-message').show();
+    else
+      $('.success-message').hide();
+  });
+}(jQuery));

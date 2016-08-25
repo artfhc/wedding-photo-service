@@ -1,0 +1,47 @@
+#form-section.jumbotron
+  .container
+    .row
+      .col-md-1
+      .col-md-10
+        p #{i18n('rsvp:txt1')}
+      .col-md-1
+    .row
+      .col-md-1
+      .col-md-10
+        form(action="mailto:afung@gmail.com", method="post", enctype="text/plain")
+          fieldset
+            .form-group
+              label #{i18n('rsvp:name')}
+                sup *
+              .row
+                .col-md-6
+                  input(type="text", name="firstName" class="form-control")
+                  label(class="caption") #{i18n('rsvp:first_name')}
+                .col-md-6
+                  input(type="text", name="lastName" class="form-control")
+                  label(class="caption") #{i18n('rsvp:last_name')}
+            .form-group
+              label #{i18n('rsvp:email_address')}
+                sup *
+              input(type="text", name="emailAddress" class="form-control")
+            .form-group
+              label #{i18n('rsvp:will_you_be_there')}
+                sup *
+              input(type="text", name="willYouBeThere" class="form-control")
+            .form-group
+              label #{i18n('rsvp:guests')}
+              input(type="text", name="numberOfGuests" class="form-control")
+            .form-group
+              label #{i18n('rsvp:allergies')}
+              input(type="text", name="allergies" class="form-control")
+            .form-group
+              label #{i18n('rsvp:message')}
+              textarea(name="emailAddress", class="form-control")
+          div(class="text-center")
+            button(class="submit-btn" type="submit") #{i18n('rsvp:submit')}
+      .col-md-1
+    .row
+      .col-md-1
+      .col-md-10  
+        p(class="success-message") #{i18n('rsvp:success')}
+      .col-md-1

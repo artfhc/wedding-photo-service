@@ -98,6 +98,16 @@ router.get('/', function(req, res, next) {
     i18n: req.t
   });
 });
+
+router.get('/rsvp', function(req, res, next) {
+  res.render('rsvp/index', {
+    layout: 'rsvp/layout', 
+    title: "Arthur and Timberly's Wedding",
+    homeImage: s3Path + "0003.jpg",
+    footerImage: s3Path + "wedding-footer-3.jpg",
+    hostPlaceImage: s3Path + "wedding-hongkong.jpg",
+    images: weddingImageData,
+    location: req.location,
     i18n: req.t
   });
 });

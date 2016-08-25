@@ -9,7 +9,6 @@ html.no-js(lang='')
     link(rel='apple-touch-icon', href='apple-touch-icon.png')
     link(rel='stylesheet', href='css/bootstrap.min.css')
     link(rel='stylesheet', href='css/main.css')
-    link(rel='stylesheet', href='css/poptrox.css')
     script(src='js/vendor/modernizr-2.8.3.min.js')
     script(src='js/vendor/typekit.js')
     script.
@@ -25,10 +24,8 @@ html.no-js(lang='')
         a(href='http://browsehappy.com/') upgrade your browser
         |  to improve your experience.
     include header-section
-    include photo-gallery-section
-    include schedule-section
-    include direction-section
-    include footer-section
+    include form-section
+    include ../footer-section
 
     // /container
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
@@ -36,7 +33,6 @@ html.no-js(lang='')
       window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\\/script>')
     script(src='js/vendor/bootstrap.min.js')
     script(src='js/plugins.js')
-    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyACGHtQ_95KW0yN2nZOCNPn07VNa3pEROg')
     script(src='js/main.js')
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script.
