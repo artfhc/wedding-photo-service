@@ -25,6 +25,17 @@
                 sup *
               input(type="text", name="emailAddress" class="form-control")
             .form-group
+              label #{i18n('rsvp:location')}
+                sup *
+              div.form-check
+                label.form-check-label
+                  input.form-check-input(type="radio", name="location", value="hk") 
+                  | &nbsp;#{i18n('hk:wedding:option')}
+              div.form-check
+                label.form-check-label
+                  input.form-check-input(type="radio", name="location", value="macau") 
+                  | &nbsp;#{i18n('macau:wedding:option')}
+            .form-group
               label #{i18n('rsvp:will_you_be_there')}
                 sup *
               input(type="text", name="willYouBeThere" class="form-control")

@@ -62,6 +62,7 @@
   "rsvp:first_name": "First Name",
   "rsvp:last_name": "Last Name",
   "rsvp:email_address": "Email Address",
+  "rsvp:location": "Choose a Location",
   "rsvp:will_you_be_there": "Will you be there?",
   "rsvp:guests": "Will you be bringing a +1? If so please specify his or her name 👫",
   "rsvp:allergies": "Do you have any food allergies? If so what is it?",
