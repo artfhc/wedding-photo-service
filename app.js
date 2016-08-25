@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var I18n = require('i18n-node');
 var i18n = new I18n({ directory: __dirname + '/locales/' });
+var getCookie = require('./helpers/getCookie');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -23,6 +24,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(i18n.middleware());
+// Location Cookie
+app.use(function(req, res, next) {
+  // Get the location cookie
+  var location = getCookie(req, 'location');
+  console.log(location);
+
+  // If location cookie is empty, create it and default to hk
+  if(location == '' || location == null) {
+    location = 'hk';
+    res.cookie('location', location);
+  }
+
+  req.location = location;
+  next();
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 

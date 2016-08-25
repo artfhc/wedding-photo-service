@@ -86,18 +86,7 @@ weddingImageData.push({'thumb': s3Path + 'thumb-min-001.jpg', 'img': s3Path + "m
 //   });
 // });
 
-
-
 router.get('/', function(req, res, next) {
-  // Get the location cookie
-  var location = getCookie(req, 'location');
-
-  // If location cookie is empty, create it and default to hk
-  if(location == '' || location == null) {
-    location = 'hk';
-    res.cookie('location', location);
-  }
-
   res.render('index', {
     layout: 'layout', 
     title: "Arthur and Timberly's Wedding",
@@ -105,7 +94,10 @@ router.get('/', function(req, res, next) {
     footerImage: s3Path + "wedding-footer-3.jpg",
     hostPlaceImage: s3Path + "wedding-hongkong.jpg",
     images: weddingImageData,
-    location: location,
+    location: req.location,
+    i18n: req.t
+  });
+});
     i18n: req.t
   });
 });
