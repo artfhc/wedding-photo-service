@@ -1,4 +1,4 @@
-nav#wedding-navbar.navbar.navbar-light.bg-faded.navbar-fixed-top(style="background-color: rgba(8,0,26,.6);")
+nav#wedding-navbar.navbar.navbar-light.bg-faded.navbar-fixed-top
   button.navbar-toggler.hidden-sm-up.collapsed(type='button', data-toggle='collapse', data-target='#navbar-header', aria-controls='navbar-header', aria-expanded='false')
     | ☰
   #navbar-header.navbar-toggleable-xs.collapse(aria-expanded='false', style='height: 0px;')
@@ -10,7 +10,7 @@ nav#wedding-navbar.navbar.navbar-light.bg-faded.navbar-fixed-top(style="backgrou
       //-     span.sr-only (current)
       li.nav-item
         if (url == '/')
-          a.nav-link(href='/rsvp') RSVP
+          a.nav-link.rsvp-link(href='/rsvp') RSVP
         else
           a.nav-link(href='/') Home
       li.nav-item
