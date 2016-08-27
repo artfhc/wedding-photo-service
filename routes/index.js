@@ -47,6 +47,12 @@ function renderIndex(req, res) {
 }
 
 function renderRsvp(req, res, errorMap) {
+
+  // TODO (artfhc): problem on the recaptcha object key
+  if (errorMap && req.form && req.form.getErrors("g-recaptcha-response")) {
+      errorMap.recaptcha = req.form.getErrors("g-recaptcha-response")
+  }
+
   res.render('rsvp/index', {
     layout: 'rsvp/layout', 
     location: req.location,
@@ -97,7 +103,6 @@ router.post(
   ),
   function(req, res){
     if (!req.form.isValid) {
-      // TODO (artfhc): problem on the recaptcha object key
       // Fail form validation
       renderRsvp(req, res, req.form.getErrors());
     } else {

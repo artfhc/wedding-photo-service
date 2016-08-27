@@ -59,8 +59,8 @@
               textarea(name="message", class="form-control")
             .form-group
               label #{i18n('rsvp:recaptcha')}
-                if errorMap.g-recaptcha-response
-                  code #{i18n(errorMap.g-recaptcha-response)}
+                if errorMap.recaptcha
+                  code #{i18n(errorMap.recaptcha)}
               div.g-recaptcha(data-sitekey="6LehpSgTAAAAAOrqf6mQGVMn2OvZd3bZeEXBCmya")
           div(class="text-center")
             input.submit-btn(type='submit', name='submit', value="#{i18n('rsvp:submit')}")

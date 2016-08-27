@@ -62,7 +62,7 @@
   "rsvp:error:emailAddress": "Needs to be an email address.",
   "rsvp:error:location": "Which one are you going?",
   "rsvp:error:willYouBeThere": "Are you going??",
-  "rsvp:error:recaptcha": "Click the captcha!",
+  "rsvp:error:recaptcha": "Are you a robot? If not, prove it!",
   
   "rsvp:txt1": "We will be having lots of yummy food and plenty of drinks after the ceremony, but we need to reserve all that ahead of time. So make sure you RSVP as soon as possible!",
   "rsvp:name": "Name",
