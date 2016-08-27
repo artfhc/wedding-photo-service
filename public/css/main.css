@@ -225,6 +225,43 @@ footer {
     max-width: 1020px;
 }
 
+/* Image container - text animcations */
+
+.image-container .desc-wrapper {
+    -webkit-animation: feature-text-anim .75s ease-in-out;
+    animation: feature-text-anim .75s ease-in-out;
+        text-rendering: optimizeLegibility;
+}
+
+@keyframes feature-text-anim {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0,10px,0);
+        -moz-transform: translate3d(0,10px,0);
+        -ms-transform: translate3d(0,10px,0);
+        -o-transform: translate3d(0,10px,0);
+        transform: translate3d(0,10px,0);
+    }
+
+    75% {
+        opacity: 0;
+        -webkit-transform: translate3d(0,10px,0);
+        -moz-transform: translate3d(0,10px,0);
+        -ms-transform: translate3d(0,10px,0);
+        -o-transform: translate3d(0,10px,0);
+        transform: translate3d(0,10px,0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
 /* RSVP - FORM SECTION */
 
 #form-section .form-control {
