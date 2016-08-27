@@ -256,7 +256,7 @@ footer {
     font-size: 12px;
 }
 
-#form-section button[type="submit"] {
+#form-section input[type="submit"] {
     color: #fff;
     background-color: #f9b862;
     border-color: #f9b862;
@@ -331,8 +331,13 @@ footer {
     color: rgba(255,206,143,.5);
 }
 
-
-
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
 
 @media (min-width: 544px) {
     #wedding-navbar ul li {

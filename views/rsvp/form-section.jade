@@ -8,25 +8,27 @@
     .row
       .col-md-1
       .col-md-10
-        form(action="mailto:afung@gmail.com", method="post", enctype="text/plain")
+        form(action="/rsvp", method="post", enctype="application/x-www-form-urlencoded")
           fieldset
+            if error
+              .form-group.alert.alert-danger
+                each err in error
+                  .row #{err}
             .form-group
               label #{i18n('rsvp:name')}
                 sup *
               .row
                 .col-md-6
-                  input(type="text", name="firstName" class="form-control")
+                  input(type="text", name="firstName" class="form-control", value=locals.firstName)
                   label(class="caption") #{i18n('rsvp:first_name')}
                 .col-md-6
-                  input(type="text", name="lastName" class="form-control")
+                  input(type="text", name="lastName" class="form-control", value=locals.lastName)
                   label(class="caption") #{i18n('rsvp:last_name')}
             .form-group
               label #{i18n('rsvp:email_address')}
-                sup *
-              input(type="text", name="emailAddress" class="form-control")
+              input(type="text", name="emailAddress" class="form-control", value=locals.emailAddress)
             .form-group
               label #{i18n('rsvp:location')}
-                sup *
               div.form-check
                 label.form-check-label
                   input.form-check-input(type="radio", name="location", value="hk") 
@@ -38,18 +40,18 @@
             .form-group
               label #{i18n('rsvp:will_you_be_there')}
                 sup *
-              input(type="text", name="willYouBeThere" class="form-control")
+              input(type="text", name="willYouBeThere" class="form-control" value=locals.willYouBeThere)
             .form-group
               label #{i18n('rsvp:guests')}
-              input(type="text", name="numberOfGuests" class="form-control")
-            .form-group
-              label #{i18n('rsvp:allergies')}
-              input(type="text", name="allergies" class="form-control")
+              input(type="text", name="numberOfGuests" class="form-control" value=locals.numberOfGuests)
             .form-group
               label #{i18n('rsvp:message')}
-              textarea(name="emailAddress", class="form-control")
+              textarea(name="message", class="form-control")
+            .form-group
+              label #{i18n('rsvp:recaptcha')}
+              div.g-recaptcha(data-sitekey="6LehpSgTAAAAAOrqf6mQGVMn2OvZd3bZeEXBCmya")
           div(class="text-center")
-            button(class="submit-btn" type="submit") #{i18n('rsvp:submit')}
+            input.submit-btn(type='submit', name='submit', value="#{i18n('rsvp:submit')}")
       .col-md-1
     .row
       .col-md-1
