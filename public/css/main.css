@@ -6,6 +6,12 @@
 body {
     font-family: "freight-sans-pro";
 }
+
+*::selection {
+    background: #000;
+    color: #fff;
+}
+
 .padding-top-bottom-15 {
     padding-top: 15px;
     padding-bottom: 15px;
