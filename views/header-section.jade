@@ -6,8 +6,8 @@
     h1.display-2 #{i18n(location + ':wedding:title')}
     p #{i18n(location + ':wedding:date_location')}
     .button-div
-      button.btn.hk-btn(class=(location == "hk" ? "btn-warning" : "btn-default"), type='button')
+      button.btn.hk-btn(class=(location == "hk" ? "btn-warning" : "btn-secondary"), type='button')
         | #{i18n("hk:wedding:option")}
       &nbsp;
-      button.btn.macau-btn(class=(location == "hk" ? "btn-default" : "btn-warning"), type='button') 
+      button.btn.macau-btn(class=(location == "hk" ? "btn-secondary" : "btn-warning"), type='button') 
         | #{i18n("macau:wedding:option")}
