@@ -291,6 +291,17 @@ footer {
     padding: 20px;
 }
 
+#wedding-navbar.navbar-fixed-top {
+    background: rgba(8,0,26,.6);
+}
+
+#wedding-navbar.navbar-absolute-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
 #wedding-navbar button {
     color: #ffce8f;
     outline: none;
@@ -331,15 +342,16 @@ footer {
     color: rgba(255,206,143,.5);
 }
 
-
-
-
 @media (min-width: 544px) {
+    #wedding-navbar {
+        right: 0;
+    }
+
     #wedding-navbar ul li {
         display: inline-block;
         float: none;
     }
-
+    
     #wedding-navbar #navbar-header ul {
         width: auto;
     }

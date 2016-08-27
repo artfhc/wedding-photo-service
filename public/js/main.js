@@ -129,3 +129,25 @@ function initGoogleMap(mapLat, mapLong, zoomLevel) {
       $('.success-message').hide();
   });
 }(jQuery));
+
+// Navbar show mid-way
+(function($) {
+  var showFixedNav = false;
+  $(window).scroll(function() {
+    if ($('#hk-image-section').position().top <= $(document).scrollTop() && !showFixedNav) {
+      $('#wedding-navbar').hide();
+      $('#wedding-navbar').addClass('navbar-fixed-top');
+      $('#wedding-navbar').removeClass('navbar-absolute-top');
+      $('#wedding-navbar').slideDown(200);
+      showFixedNav = true;
+    } else if ($('#hk-image-section').position().top > $(document).scrollTop() && showFixedNav) {
+      $('#wedding-navbar').slideUp(200, function() {
+        $('#wedding-navbar').removeClass('navbar-fixed-top');
+        $('#wedding-navbar').addClass('navbar-absolute-top');
+        $('#wedding-navbar').show();
+      });
+      showFixedNav = false;
+    }
+  });
+  $(window).scroll();
+}(jQuery));
