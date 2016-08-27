@@ -46,7 +46,7 @@ function renderIndex(req, res) {
   });
 }
 
-function renderRsvp(req, res, errors) {
+function renderRsvp(req, res, errorMap) {
   res.render('rsvp/index', {
     layout: 'rsvp/layout', 
     location: req.location,
@@ -54,7 +54,7 @@ function renderRsvp(req, res, errors) {
     url: req.url,
     language: req.i18n.language,
     locals: req.form,
-    error: errors
+    errorMap: errorMap || {}
   });
 }
 
@@ -66,7 +66,7 @@ function requestRecaptchaVerification(req, res, recaptchaResponse, remoteAddress
     // Success will be true or false depending upon captcha validation.
     if(body.success !== undefined && !body.success) {
       console.log("requestRecaptchaVerification failed: " + remoteAddress + " | response body: " + body);
-      renderRsvp(req, res, ["You are a robot!!!"]);
+      renderRsvp(req, res); // TODO (artfhc): just go to 404 or something
     } else {
       // TODO (artfhc): send the email?
       console.log("requestRecaptchaVerification succeed");
@@ -86,19 +86,20 @@ router.get('/rsvp', function(req, res, next) {
 router.post(
   '/rsvp',
   form(
-    field("firstName").trim().required("", "What is your first name?"),
-    field("lastName").trim().required("", "What is your last name?"),
-    field("emailAddress").trim().isEmail("Needs to be an email address."),
-    field("location").required("", "Which one are you going?"),
-    field("willYouBeThere"),
+    field("firstName").trim().required("", "rsvp:error:firstName"),
+    field("lastName").trim().required("", "rsvp:error:lastName"),
+    field("emailAddress").trim().isEmail("rsvp:error:emailAddress"),
+    field("location").required("", "rsvp:error:location"),
+    field("willYouBeThere").required("", "rsvp:error:willYouBeThere"),
     field("numberOfGuests"),
     field("message"),
-    field("g-recaptcha-response").trim().required("", "Click the captcha!")
+    field("g-recaptcha-response").trim().required("", "rsvp:error:recaptcha")
   ),
   function(req, res){
     if (!req.form.isValid) {
+      // TODO (artfhc): problem on the recaptcha object key
       // Fail form validation
-      renderRsvp(req, res, req.form.errors);
+      renderRsvp(req, res, req.form.getErrors());
     } else {
       requestRecaptchaVerification(req, res, req.body['g-recaptcha-response'], req.connection.remoteAddress);
     }

@@ -10,13 +10,13 @@
       .col-md-10
         form(action="/rsvp", method="post", enctype="application/x-www-form-urlencoded")
           fieldset
-            if error
-              .form-group.alert.alert-danger
-                each err in error
-                  .row #{err}
             .form-group
               label #{i18n('rsvp:name')}
                 sup *
+                if errorMap.firstName
+                  code #{i18n(errorMap.firstName)}
+                if errorMap.lastName
+                  code #{i18n(errorMap.lastName)}
               .row
                 .col-md-6
                   input(type="text", name="firstName" class="form-control", value=locals.firstName)
@@ -26,9 +26,13 @@
                   label(class="caption") #{i18n('rsvp:last_name')}
             .form-group
               label #{i18n('rsvp:email_address')}
+                if errorMap.emailAddress
+                  code #{i18n(errorMap.emailAddress)}
               input(type="text", name="emailAddress" class="form-control", value=locals.emailAddress)
             .form-group
               label #{i18n('rsvp:location')}
+                if errorMap.location
+                  code #{i18n(errorMap.location)}
               div.form-check
                 label.form-check-label
                   input.form-check-input(type="radio", name="location", value="hk") 
@@ -40,15 +44,23 @@
             .form-group
               label #{i18n('rsvp:will_you_be_there')}
                 sup *
+                if errorMap.willYouBeThere
+                  code #{i18n(errorMap.willYouBeThere)}
               input(type="text", name="willYouBeThere" class="form-control" value=locals.willYouBeThere)
             .form-group
               label #{i18n('rsvp:guests')}
+                if errorMap.numberOfGuests
+                  code #{i18n(errorMap.numberOfGuests)}
               input(type="text", name="numberOfGuests" class="form-control" value=locals.numberOfGuests)
             .form-group
               label #{i18n('rsvp:message')}
+                if errorMap.message
+                  code #{i18n(errorMap.message)}
               textarea(name="message", class="form-control")
             .form-group
               label #{i18n('rsvp:recaptcha')}
+                if errorMap.g-recaptcha-response
+                  code #{i18n(errorMap.g-recaptcha-response)}
               div.g-recaptcha(data-sitekey="6LehpSgTAAAAAOrqf6mQGVMn2OvZd3bZeEXBCmya")
           div(class="text-center")
             input.submit-btn(type='submit', name='submit', value="#{i18n('rsvp:submit')}")

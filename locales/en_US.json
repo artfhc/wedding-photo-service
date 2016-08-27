@@ -56,6 +56,13 @@
   "macau:directions:txt3": "next to MGM and Wing Lei",
   "macau:rsvp:title": "RSVP",
   "macau:rsvp:description": "Please respond by Octorber 1st",
+
+  "rsvp:error:firstName": "What is your first name?",
+  "rsvp:error:lastName": "What is your last name?",
+  "rsvp:error:emailAddress": "Needs to be an email address.",
+  "rsvp:error:location": "Which one are you going?",
+  "rsvp:error:willYouBeThere": "Are you going??",
+  "rsvp:error:recaptcha": "Click the captcha!",
   
   "rsvp:txt1": "We will be having lots of yummy food and plenty of drinks after the ceremony, but we need to reserve all that ahead of time. So make sure you RSVP as soon as possible!",
   "rsvp:name": "Name",
