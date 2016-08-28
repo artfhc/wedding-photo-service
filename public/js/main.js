@@ -118,8 +118,12 @@ function initGoogleMap(mapLat, mapLong, zoomLevel) {
 // Navbar show mid-way
 (function($) {
   var showFixedNav = false;
+
+  if(!$('#hk-image-section').position())
+    return;
+
   $(window).scroll(function() {
-    if ($('#hk-image-section').position().top <= $(document).scrollTop() && !showFixedNav) {
+    if ($('#hk-image-section').position() && $('#hk-image-section').position().top <= $(document).scrollTop() && !showFixedNav) {
       $('#wedding-navbar').hide();
       $('#wedding-navbar').addClass('navbar-fixed-top');
       $('#wedding-navbar').removeClass('navbar-absolute-top');

@@ -222,16 +222,12 @@ img {
         padding-top: 12%;
     }
 }
-footer {
-    color: rgba(255, 255, 255, .4);
-    background-color: #08001a;
-}
-.footer-inner {
-    padding: 64px 32px;
-    max-width: 1020px;
-}
 
-/* Image container - text animcations */
+
+/* ==========================================================================
+   Image container - text animations
+   ========================================================================== */
+
 .image-container .desc-wrapper {
     -webkit-animation: feature-text-anim 1.25s ease-in-out;
     animation: feature-text-anim 1.25s ease-in-out;
@@ -267,7 +263,9 @@ footer {
     }
 }
 
-/* RSVP - FORM SECTION */
+/* ==========================================================================
+   RSVP - FORM SECTION
+   ========================================================================== */
 
 #form-section .form-control {
     background: #fafafa;
@@ -324,8 +322,9 @@ footer {
     text-align: center;
 }
 
-
-/* NAVBAR */
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
 
 #wedding-navbar {
     /*background-color: rgba(8,0,26,.6);*/
@@ -435,19 +434,33 @@ footer {
     }*/
 }
 
-.share-links {
+/* ==========================================================================
+   FOOTER SHARE LINKS
+   ========================================================================== */
+
+footer {
+    color: rgba(255, 255, 255, .4);
+    background-color: #08001a;
+}
+footer .footer-inner {
+    padding: 64px 32px;
+    max-width: 1020px;
 }
 
-.share-links a {
+footer .share-links {
+}
+
+footer .share-links a {
     text-decoration: none;
     color: rgba(255, 255, 255, .4);
     margin-left: 10px;
+    cursor: pointer;
 }
 
-.share-links a:first-child {
+footer .share-links a:first-child {
     margin-left: 0;
 }
 
-.share-links a:hover {
+footer .share-links a:hover {
     color: rgb(255, 255, 255);
 }
