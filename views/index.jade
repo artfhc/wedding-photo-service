@@ -40,7 +40,10 @@ html.no-js(lang='')
     script(src='js/plugins.js')
     script(src='js/vendor/skrollr.min.js')
     script.
-      var s = skrollr.init({ smoothScrolling: true });
+      skrollr.init({
+        smoothScrolling: false,
+        mobileDeceleration: 0.004
+      });
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyACGHtQ_95KW0yN2nZOCNPn07VNa3pEROg')
     script(src='js/main.js')
     script.

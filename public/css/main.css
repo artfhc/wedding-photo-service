@@ -34,9 +34,10 @@ body {
 .bg-image {
     /* image specified in seperate class  */
     
-    min-height: 520px;
-    min-width: 100%;
+    height: 520px;
+    width: 100%;
     background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/0003.jpg);
+    background-repeat: no-repeat;
 }
 .bg-image-hk {
     /* image specified in seperate class  */
