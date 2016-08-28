@@ -1,5 +1,11 @@
 var express = require('express');
+var form = require('express-form'); // https://github.com/dandean/express-form
 var router = express.Router();
+var request = require('request');
+var sendGrid = require('sendgrid');
+
+var field = form.field;
+var recaptchaUrl = "https://www.google.com/recaptcha/api/siteverify?secret=";
 var imageDataDescription = require('../data/imagedescription.json');
 var getCookie = require('../helpers/getCookie');
 var s3Path = 'https://s3-us-west-2.amazonaws.com/propose-photos/';
@@ -17,76 +23,13 @@ Number.prototype.pad = function(size) {
 Array.prototype.clone = function() {
   return this.slice(0);
 };
-var imageLength = 18;
-var imagesData = [];
-var i = 0;
-var photosRows4 = [];
 
-for (i = 0; i < imageLength; i++) { 
-  temp = {
-    full: s3Path + (i + 1).pad(4) + '.jpg',
-    thumb: s3Path + s3ThumbnailPrefix + (i + 1).pad(2) + '.jpg'
-  };
-  temp.title = imageDataDescription['imageDecsripton'][i].title;
-  temp.description = imageDataDescription['imageDecsripton'][i].description;
-  imagesData.push(temp);
-}
-
-var imagesData2 = imagesData.clone();
-while(imagesData2[0])
-  photosRows4.push(imagesData2.splice(0,4));
-
-/* GET template 1  */
-router.get('/lens', function(req, res, next) {
-  res.render('lens/index', {
-    layout: 'lens/layout', 
-    title: 'Express',
-    i18n: req.t,
-    pageData: {
-      images: imagesData
-    }
-  });
-});
-
-/* GET template 2  */
-router.get('/overflow', function(req, res, next) {
-  res.render('overflow/index', {
-    layout: 'overflow/layout', 
-    title: 'Express',
-    pageData: {
-      images: photosRows4
-    },
-    i18n: req.t
-  });
-});
-
-/* GET template 3  */
 var weddingImageData = [];
 weddingImageData.push({'thumb': s3Path + 'thumb-min-004.jpg', 'img': s3Path + "min-004.jpg"});
 weddingImageData.push({'thumb': s3Path + 'thumb-min-007.jpg', 'img': s3Path + "min-007.jpg"});
 weddingImageData.push({'thumb': s3Path + 'thumb-min-001.jpg', 'img': s3Path + "min-001.jpg"});
-// router.get('/wedding', function(req, res, next) {
-//   res.render('wedding/index', {
-//     layout: 'wedding/layout', 
-//     title: "Arthur and Timberly's Wedding",
-//     homeImage: s3Path + "0003.jpg",
-//     footerImage: s3Path + "wedding-footer-3.jpg",
-//     hostPlaceImage: s3Path + "wedding-hongkong.jpg",
-//     images: weddingImageData,
-//     i18n: req.t
-//   });
-// });
 
-/* GET template Under Construction  */
-// router.get('/', function(req, res, next) {
-//   res.render('underconstruction/index', {
-//     layout: 'underconstruction/layout', 
-//     title: "Arthur and Timberly's Wedding Under Construction",
-//     i18n: req.t
-//   });
-// });
-
-router.get('/', function(req, res, next) {
+function renderIndex(req, res) {
   res.render('index', {
     layout: 'layout', 
     title: "Arthur and Timberly's Wedding",
@@ -102,22 +45,92 @@ router.get('/', function(req, res, next) {
     url: req.url,
     language: req.i18n.language
   });
-});
+}
 
-router.get('/rsvp', function(req, res, next) {
+function renderRsvp(req, res, errorMap) {
+
+  // TODO (artfhc): problem on the recaptcha object key
+  if (errorMap && req.form && req.form.getErrors("g-recaptcha-response")) {
+      errorMap.recaptcha = req.form.getErrors("g-recaptcha-response")
+  }
+
   res.render('rsvp/index', {
     layout: 'rsvp/layout', 
-    title: "Arthur and Timberly's Wedding",
-    homeImage: s3Path + "0003.jpg",
-    footerImage: s3Path + "wedding-footer-3.jpg",
-    hostPlaceImage: s3Path + "wedding-hongkong.jpg",
-    images: weddingImageData,
     location: req.location,
     i18n: req.t,
     url: req.url,
-    language: req.i18n.language
+    language: req.i18n.language,
+    locals: req.form,
+    errorMap: errorMap || {}
   });
+}
+
+function requestRecaptchaVerification(req, res, recaptchaResponse, remoteAddress) {
+  var verificationUrl = recaptchaUrl + process.env.RECAPCHA_SECRETKEY + "&response=" + recaptchaResponse + "&remoteip=" + remoteAddress;
+  // Hitting GET request to the URL, Google will respond with success or error scenario.
+  request(verificationUrl, function(error,response,body) {
+    body = JSON.parse(body);
+    // Success will be true or false depending upon captcha validation.
+    if(body.success !== undefined && !body.success) {
+      console.error("requestRecaptchaVerification failed: " + remoteAddress + " | response body: " + body);
+      renderRsvp(req, res); // TODO (artfhc): just go to 404 or something
+    } else {
+      // TODO (artfhc): send the email?
+      console.log("requestRecaptchaVerification succeed");
+      sendEmail(req, res);
+    }
+  });
+}
+
+function sendEmail(req, res) {
+  var sendgrid = sendGrid(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD),
+      from = req.form.emailAddress || process.env.EMAILTO,
+      to = process.env.EMAILTO;
+
+  sendgrid.send({
+    to:       to,
+    from:     from,
+    subject:  'RSVP for Wedding Photo App',
+    text:     'Content of the form: ' + JSON.stringify(req.form)
+  }, function(err, json) {
+    if (err) { 
+      console.error("sendEmail failed: " + err);
+      renderRsvp(req, res); 
+    }
+    console.log("sendEmail succeed: " + from);
+    renderIndex(req, res);
+  });
+}
+
+router.get('/', function(req, res, next) {
+  renderIndex(req, res);
 });
+
+router.get('/rsvp', function(req, res, next) {
+  renderRsvp(req, res);
+});
+
+router.post(
+  '/rsvp',
+  form(
+    field("firstName").trim().required("", "rsvp:error:firstName"),
+    field("lastName").trim().required("", "rsvp:error:lastName"),
+    field("emailAddress").trim().isEmail("rsvp:error:emailAddress"),
+    field("location").required("", "rsvp:error:location"),
+    field("willYouBeThere").required("", "rsvp:error:willYouBeThere"),
+    field("numberOfGuests"),
+    field("message"),
+    field("g-recaptcha-response").trim().required("", "rsvp:error:recaptcha")
+  ),
+  function(req, res){
+    if (!req.form.isValid) {
+      // Fail form validation
+      renderRsvp(req, res, req.form.getErrors());
+    } else {
+      requestRecaptchaVerification(req, res, req.body['g-recaptcha-response'], req.connection.remoteAddress);
+    }
+  }
+);
 
 
 module.exports = router;

@@ -7,11 +7,14 @@ var bodyParser = require('body-parser');
 var I18n = require('i18n-node');
 var i18n = new I18n({ directory: __dirname + '/locales/' });
 var getCookie = require('./helpers/getCookie');
+var dotenv = require('dotenv');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+dotenv.load({ path: '.env' });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

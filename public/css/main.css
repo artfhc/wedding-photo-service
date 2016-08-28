@@ -6,6 +6,12 @@
 body {
     font-family: "freight-sans-pro";
 }
+
+*::selection {
+    background: #000;
+    color: #fff;
+}
+
 .padding-top-bottom-15 {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -122,6 +128,10 @@ body {
     background-color: rgba(26, 17, 34, .6);
     z-index: 99;
 }
+.display {
+    font-size: 3.5rem;
+    font-weight: 300;
+}
 p {
     display: block;
     -webkit-margin-before: 1em;
@@ -136,7 +146,7 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    padding-top: 10%;
+    padding-top: 20%;
 }
 #footer-image-section .desc-wrapper {
     padding-top: 10%;
@@ -190,13 +200,17 @@ img {
         height: 411px;
     }
     .desc-wrapper {
-        padding-top: 15%;
+        padding-top: 18%;
     }
     #hk-image-section .desc-wrapper {
         padding-top: 12%;
     }
     #footer-image-section .desc-wrapper .display-2 {
         font-size: 5.5rem;
+    }
+    .display {
+        font-size: 4.5rem;
+        font-weight: 300;
     }
 }
 @media only screen and (min-width: 1200px) {
@@ -210,23 +224,80 @@ img {
         height: 617px;
     }
     .desc-wrapper {
+        padding-top: 15%;
         padding-left: 15%;
         padding-right: 15%;
     }
     #footer-image-section .desc-wrapper {
         padding-top: 12%;
     }
-}
-footer {
-    color: rgba(255, 255, 255, .4);
-    background-color: #08001a;
-}
-.footer-inner {
-    padding: 64px 32px;
-    max-width: 1020px;
+    .display {
+        font-size: 5.5rem;
+        font-weight: 300;
+    }
 }
 
-/* RSVP - FORM SECTION */
+
+/* ==========================================================================
+   Image container - text animations
+   ========================================================================== */
+
+.image-container .desc-wrapper {
+    -webkit-animation: feature-text-anim 1.25s ease-in-out;
+    animation: feature-text-anim 1.25s ease-in-out;
+    text-rendering: optimizeLegibility;
+}
+
+@keyframes feature-text-anim {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0,10px,0);
+        -moz-transform: translate3d(0,10px,0);
+        -ms-transform: translate3d(0,10px,0);
+        -o-transform: translate3d(0,10px,0);
+        transform: translate3d(0,10px,0);
+    }
+
+    75% {
+        opacity: 0;
+        -webkit-transform: translate3d(0,10px,0);
+        -moz-transform: translate3d(0,10px,0);
+        -ms-transform: translate3d(0,10px,0);
+        -o-transform: translate3d(0,10px,0);
+        transform: translate3d(0,10px,0);
+    }
+
+    85% {
+        opacity: 0.5;
+        -webkit-transform: translate3d(0,5px,0);
+        -moz-transform: translate3d(0,5px,0);
+        -ms-transform: translate3d(0,5px,0);
+        -o-transform: translate3d(0,5px,0);
+        transform: translate3d(0,5px,0);
+    }
+
+    95% {
+        opacity: 0.80;
+        -webkit-transform: translate3d(0,3px,0);
+        -moz-transform: translate3d(0,3px,0);
+        -ms-transform: translate3d(0,3px,0);
+        -o-transform: translate3d(0,3px,0);
+        transform: translate3d(0,3px,0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+/* ==========================================================================
+   RSVP - FORM SECTION
+   ========================================================================== */
 
 #form-section .form-control {
     background: #fafafa;
@@ -257,7 +328,7 @@ footer {
     font-size: 12px;
 }
 
-#form-section button[type="submit"] {
+#form-section input[type="submit"] {
     color: #fff;
     background-color: #f9b862;
     border-color: #f9b862;
@@ -283,13 +354,25 @@ footer {
     text-align: center;
 }
 
-
-/* NAVBAR */
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
 
 #wedding-navbar {
     /*background-color: rgba(8,0,26,.6);*/
     background-color: transparent;
     padding: 20px;
+}
+
+#wedding-navbar.navbar-fixed-top {
+    background: rgba(8,0,26,.6);
+}
+
+#wedding-navbar.navbar-absolute-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 #wedding-navbar button {
@@ -332,15 +415,24 @@ footer {
     color: rgba(255,206,143,.5);
 }
 
-
-
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
 
 @media (min-width: 544px) {
+    #wedding-navbar {
+        right: 0;
+    }
+
     #wedding-navbar ul li {
         display: inline-block;
         float: none;
     }
-
+    
     #wedding-navbar #navbar-header ul {
         width: auto;
     }
@@ -372,4 +464,35 @@ footer {
     #wedding-navbar ul li {
         display: block;
     }*/
+}
+
+/* ==========================================================================
+   FOOTER SHARE LINKS
+   ========================================================================== */
+
+footer {
+    color: rgba(255, 255, 255, .4);
+    background-color: #08001a;
+}
+footer .footer-inner {
+    padding: 64px 32px;
+    max-width: 1020px;
+}
+
+footer .share-links {
+}
+
+footer .share-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .4);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+footer .share-links a:first-child {
+    margin-left: 0;
+}
+
+footer .share-links a:hover {
+    color: rgb(255, 255, 255);
 }
