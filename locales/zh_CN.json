@@ -74,6 +74,5 @@
   "rsvp:guests": "Will you be bringing a +1? If so please specify his or her name 👫",
   "rsvp:message": "Message",
   "rsvp:recaptcha": "Captcha",
-  "rsvp:submit": "Submit",
-  "rsvp:success": "Thank you! We will be confirming your RSVP via email soon. Make sure you look out for the email!"
+  "rsvp:submit": "Submit"
 }

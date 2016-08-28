@@ -115,21 +115,6 @@ function initGoogleMap(mapLat, mapLong, zoomLevel) {
   });
 }(jQuery));
 
-// RSVP Form
-// (function($) {
-//   $('.submit-btn').click(function(){
-//     // Validate here...
-//     var success = true;
-
-//     $('form').submit();
-
-//     if (success)
-//       $('.success-message').show();
-//     else
-//       $('.success-message').hide();
-//   });
-// }(jQuery));
-
 // Navbar show mid-way
 (function($) {
   var showFixedNav = false;

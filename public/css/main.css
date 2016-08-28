@@ -232,11 +232,10 @@ footer {
 }
 
 /* Image container - text animcations */
-
 .image-container .desc-wrapper {
-    -webkit-animation: feature-text-anim .75s ease-in-out;
-    animation: feature-text-anim .75s ease-in-out;
-        text-rendering: optimizeLegibility;
+    -webkit-animation: feature-text-anim 1.25s ease-in-out;
+    animation: feature-text-anim 1.25s ease-in-out;
+    text-rendering: optimizeLegibility;
 }
 
 @keyframes feature-text-anim {
