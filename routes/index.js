@@ -2,8 +2,9 @@ var express = require('express');
 var form = require('express-form'); // https://github.com/dandean/express-form
 var router = express.Router();
 var request = require('request');
+var sendGrid = require('sendgrid');
+
 var field = form.field;
-var secretKey = "6LehpSgTAAAAAPvodvkWH8RVntgnqQs0HqWcjhL5";
 var recaptchaUrl = "https://www.google.com/recaptcha/api/siteverify?secret=";
 var imageDataDescription = require('../data/imagedescription.json');
 var getCookie = require('../helpers/getCookie');
@@ -65,19 +66,39 @@ function renderRsvp(req, res, errorMap) {
 }
 
 function requestRecaptchaVerification(req, res, recaptchaResponse, remoteAddress) {
-  var verificationUrl = recaptchaUrl + secretKey + "&response=" + recaptchaResponse + "&remoteip=" + remoteAddress;
+  var verificationUrl = recaptchaUrl + process.env.RECAPCHA_SECRETKEY + "&response=" + recaptchaResponse + "&remoteip=" + remoteAddress;
   // Hitting GET request to the URL, Google will respond with success or error scenario.
   request(verificationUrl, function(error,response,body) {
     body = JSON.parse(body);
     // Success will be true or false depending upon captcha validation.
     if(body.success !== undefined && !body.success) {
-      console.log("requestRecaptchaVerification failed: " + remoteAddress + " | response body: " + body);
+      console.error("requestRecaptchaVerification failed: " + remoteAddress + " | response body: " + body);
       renderRsvp(req, res); // TODO (artfhc): just go to 404 or something
     } else {
       // TODO (artfhc): send the email?
       console.log("requestRecaptchaVerification succeed");
-      renderIndex(req, res);
+      sendEmail(req, res);
     }
+  });
+}
+
+function sendEmail(req, res) {
+  var sendgrid = sendGrid(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD),
+      from = req.form.emailAddress || process.env.EMAILTO,
+      to = process.env.EMAILTO;
+
+  sendgrid.send({
+    to:       to,
+    from:     from,
+    subject:  'RSVP for Wedding Photo App',
+    text:     'Content of the form: ' + JSON.stringify(req.form)
+  }, function(err, json) {
+    if (err) { 
+      console.error("sendEmail failed: " + err);
+      renderRsvp(req, res); 
+    }
+    console.log("sendEmail succeed: " + from);
+    renderIndex(req, res);
   });
 }
 

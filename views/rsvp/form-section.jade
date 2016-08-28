@@ -56,7 +56,7 @@
               label #{i18n('rsvp:message')}
                 if errorMap.message
                   code #{i18n(errorMap.message)}
-              textarea(name="message", class="form-control")
+              textarea(name="message", class="form-control", value=locals.message)
             .form-group
               label #{i18n('rsvp:recaptcha')}
                 if errorMap.recaptcha
