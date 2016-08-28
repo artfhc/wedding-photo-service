@@ -32,6 +32,7 @@
   "hk:directions:txt3": "Sha Tin Station by MTR",
   "hk:rsvp:title": "RSVP",
   "hk:rsvp:description": "Please respond by September 20th",
+  "hk:sharetext": "Arthur&Timberly",
 
   "macau:wedding:option": "Macau",
   "macau:schedule:txt1": "Come celebrate with us",
@@ -56,6 +57,7 @@
   "macau:directions:txt3": "next to MGM and Wing Lei",
   "macau:rsvp:title": "RSVP",
   "macau:rsvp:description": "Please respond by Octorber 1st",
+  "macau:sharetext": "Arthur&Timberly",
 
   "rsvp:error:firstName": "What is your first name?",
   "rsvp:error:lastName": "What is your last name?",

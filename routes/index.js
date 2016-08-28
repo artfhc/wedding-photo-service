@@ -42,8 +42,7 @@ function renderIndex(req, res) {
     location: req.location,
     i18n: req.t,
     url: req.url,
-    language: req.i18n.language,
-    shareLinkMessage: "Arthur and Timberly's Wedding"
+    language: req.i18n.language
   });
 }
 
