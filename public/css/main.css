@@ -23,12 +23,13 @@ body {
 }
 .image-container {
     position: relative;
+    overflow: hidden;
 }
 .bg-image {
     /* image specified in seperate class  */
     
-    height: 520px;
-    width: 100%;
+    min-height: 520px;
+    min-width: 100%;
     background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/0003.jpg);
 }
 .bg-image-hk {
