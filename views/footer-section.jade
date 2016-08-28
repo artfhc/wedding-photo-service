@@ -3,6 +3,20 @@ footer#footer
     .row
       .col-md-12
           p.text-center #{i18n("footer:see_you_there")}
+          p.text-center.share-links
+            a(href="https://twitter.com/intent/tweet?url=http%3A%2F%2Farthurtimberly.com&text=#{shareLinkMessage}" target="_blank")
+              i.fa.fa-2x.fa-twitter-square(aria-hidden="true", style="margin-right: 4px;")
+            a(href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Farthurtimberly.com" target="_blank")
+              i.fa.fa-2x.fa-facebook-square(aria-hidden="true")
+            a(href="https://plus.google.com/share?url=http%3A%2F%2Farthurtimberly.com" target="_blank")  
+              i.fa.fa-2x.fa-google-plus-square(aria-hidden="true")
+            a(href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Farthurtimberly.com&title=#{shareLinkMessage}" target="_blank")  
+              i.fa.fa-2x.fa-linkedin-square(aria-hidden="true")
+            a(href="http://www.tumblr.com/share?v=3&u=http%3A%2F%2Farthurtimberly.com&t=#{shareLinkMessage}" target="_blank")  
+              i.fa.fa-2x.fa-tumblr-square(aria-hidden="true")
+            a(href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Farthurtimberly.com&media=&description=#{shareLinkMessage}" target="_blank")  
+              i.fa.fa-2x.fa-pinterest-square(aria-hidden="true")
+
           form(id="language-form", style="display: none")
             p.text-center
               select(name="language-select")

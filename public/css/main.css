@@ -420,3 +420,20 @@ footer {
         display: block;
     }*/
 }
+
+.share-links {
+}
+
+.share-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .4);
+    margin-left: 10px;
+}
+
+.share-links a:first-child {
+    margin-left: 0;
+}
+
+.share-links a:hover {
+    color: rgb(255, 255, 255);
+}
