@@ -10,7 +10,7 @@ nav#wedding-navbar.navbar.navbar-light.bg-faded.navbar-absolute-top
       //-     span.sr-only (current)
       li.nav-item
         if (url == '/')
-          a.nav-link.rsvp-link(href='/rsvp') RSVP
+          a.nav-link.rsvp-link(href='/rsvp') #{i18n(location + ":rsvp:button")}
         else
           a.nav-link(href='/') Home
       li.nav-item
@@ -18,7 +18,7 @@ nav#wedding-navbar.navbar.navbar-light.bg-faded.navbar-absolute-top
           | English
       li.nav-item
         a.nav-link(class=(language == 'zh' ? 'active' : 'chinese-btn'), href='javascript:void(0);')
-          | Chinese
+          | 中文
     //- form.form-inline.pull-xs-right
     //-   input.form-control(type='text', placeholder='Search')
     //-   button.btn.btn-outline-success(type='submit') Search
