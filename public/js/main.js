@@ -1,4 +1,6 @@
-// Google Maps APIs
+/* ==========================================================================
+   Helper Functions
+   ========================================================================== */
 function initGoogleMap(mapLat, mapLong, zoomLevel) {
   try {
     google.maps.event.addDomListener(window, 'load', function() {
@@ -25,42 +27,24 @@ function initGoogleMap(mapLat, mapLong, zoomLevel) {
         position: latLng
       });
 
-      var contentString = 
-        '<div>' + 
-          '<p>Royal Park Chinese Restaurant</p>' +
-          '<p>8 Pak Hok Ting Street, Shatin, Hong Kong</p>' +
-          '<p><a href="http://www.royalpark.com.hk" target="_blank">http://www.royalpark.com.hk</a>' +
-        '</div>';
-
-      var contentString2 = 
-        '<div>' + 
-          '<p>Mandarin Oriental</p>' +
-          '<p>Mandarin Oriental, Macau Avenida Dr Sun Yat Sen, NAPE, Macau</p>' +
-          '<p><a href="http://www.mandarinoriental.com/" target="_blank">http://www.mandarinoriental.com/macau</a>' +
-        '</div>';
-
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
-
       map.setZoom(zoomLevel);
-
-      // shift map slightly top right
       map.setCenter(new google.maps.LatLng(mapLat, mapLong));
-
-      // window.addEventListener("resize", function() {
-      //   map.setCenter(latLng);
-      // });
     });
   } catch(err) {
 
   }
 }
 
+function toggleCookieParm(event) {
+  event.preventDefault();
+  document.cookie = event.data.cookieParm;
+  window.location.href = window.location.href;
+}
 
+/* ==========================================================================
+   Main Code
+   ========================================================================== */
+   
 // Poptrox
 (function($) {
   $('#photo-gallery').poptrox({
@@ -76,67 +60,44 @@ function initGoogleMap(mapLat, mapLong, zoomLevel) {
   });
 }(jQuery));
 
-// Language
+// Language & Location
 (function($) {
-  // $('select[name="language-select"]').change(function(ev) {
-  //   var $this = $(this);
-  //   if($this.val() == 'en')
-  //     document.cookie = 'locale=en_US';
-  //   else if ($this.val() == 'zh')
-  //     document.cookie = 'locale=zh_CN';
-  //   else
-  //     return false;
-  //   window.location.href = window.location.href;
-  // });
-  $('a.english-btn').click(function(event) {
-    event.preventDefault();
-    document.cookie = 'locale=en_US';
-    window.location.href = window.location.href;
-  });
-
-  $('a.chinese-btn').click(function(event) {
-    event.preventDefault();
-    document.cookie = 'locale=zh_CN';
-    window.location.href = window.location.href;
-  });
-
-}(jQuery));
-
-// Location
-(function($) {
-  $('.hk-btn').click(function() {
-    document.cookie = 'location=hk';
-    window.location.href = window.location.href;
-  });
-
-  $('.macau-btn').click(function() {
-    document.cookie = 'location=macau';
-    window.location.href = window.location.href;
-  });
+  $('a.english-btn').on('click', { cookieParm: 'locale=en_US'}, toggleCookieParm);
+  $('a.chinese-btn').on('click', { cookieParm: 'locale=zh_CN'}, toggleCookieParm);
+  $('.hk-btn').on('click', { cookieParm: 'location=hk'}, toggleCookieParm);
+  $('.macau-btn').on('click', { cookieParm: 'location=macau'}, toggleCookieParm);
 }(jQuery));
 
 // Navbar show mid-way
 (function($) {
   var showFixedNav = false;
+  var $document = $(document);
+  var $hkImageSection = $('#hk-image-section');
+  var $weddingNavbar = $('#wedding-navbar');
 
-  if(!$('#hk-image-section').position())
+  if($.isEmptyObject($hkImageSection))
     return;
 
   $(window).scroll(function() {
-    if ($('#hk-image-section').position() && $('#hk-image-section').position().top <= $(document).scrollTop() && !showFixedNav) {
-      $('#wedding-navbar').hide();
-      $('#wedding-navbar').addClass('navbar-fixed-top');
-      $('#wedding-navbar').removeClass('navbar-absolute-top');
-      $('#wedding-navbar').slideDown(200);
-      showFixedNav = true;
-    } else if ($('#hk-image-section').position().top > $(document).scrollTop() && showFixedNav) {
-      $('#wedding-navbar').slideUp(200, function() {
-        $('#wedding-navbar').removeClass('navbar-fixed-top');
-        $('#wedding-navbar').addClass('navbar-absolute-top');
-        $('#wedding-navbar').show();
-      });
-      showFixedNav = false;
+    if(showFixedNav) {
+      if($hkImageSection.position().top > $document.scrollTop()) {
+        $weddingNavbar.slideUp(200, function() {
+          $weddingNavbar.removeClass('navbar-fixed-top');
+          $weddingNavbar.addClass('navbar-absolute-top');
+          $weddingNavbar.show();
+        });
+        showFixedNav = false;
+      }
+    } else {
+      if($hkImageSection.position().top <= $document.scrollTop()) {
+        $weddingNavbar.hide();
+        $weddingNavbar.addClass('navbar-fixed-top');
+        $weddingNavbar.removeClass('navbar-absolute-top');
+        $weddingNavbar.slideDown(200);
+        showFixedNav = true;
+      }
     }
   });
+
   $(window).scroll();
 }(jQuery));
