@@ -8,6 +8,7 @@ var I18n = require('i18n-node');
 var i18n = new I18n({ directory: __dirname + '/locales/' });
 var getCookie = require('./helpers/getCookie');
 var dotenv = require('dotenv');
+var MobileDetect = require('mobile-detect');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -39,6 +40,16 @@ app.use(function(req, res, next) {
   }
 
   req.location = location;
+  next();
+});
+// Mobile Detection
+app.use(function(req, res, next) {
+  // Get the mobile detect user agent
+  var md = new MobileDetect(req.headers['user-agent']);
+  if (md.mobile())
+    req.isMobile = true;
+  else
+    req.isMobile = false;
   next();
 });
 
