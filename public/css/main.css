@@ -32,30 +32,20 @@ body {
     overflow: hidden;
 }
 .bg-image {
-    /* image specified in seperate class  */
-    
     height: 520px;
     width: 100%;
-    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/0003.jpg);
 }
 .bg-image-hk {
-    /* image specified in seperate class  */
     height: 448px;
     width: 100%;
-    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-hongkong.jpg);
 }
 .bg-image-macau {
-    /* image specified in seperate class  */
     height: 600px;
     width: 100%;
-    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-macau.jpg);
 }
 .bg-image-footer {
-    /* image specified in seperate class  */
-    
     height: 441px;
     width: 100%;
-    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-footer-3.jpg);
 }
 .bg-image-rsvp {
     height: 550px;

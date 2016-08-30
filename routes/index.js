@@ -8,8 +8,7 @@ var field = form.field;
 var recaptchaUrl = "https://www.google.com/recaptcha/api/siteverify?secret=";
 var imageDataDescription = require('../data/imagedescription.json');
 var getCookie = require('../helpers/getCookie');
-var s3Path = 'https://s3-us-west-2.amazonaws.com/propose-photos/';
-var s3ThumbnailPrefix = 'thumb-';
+var cdnPath = "https://d3oglu70a1k4a5.cloudfront.net/";
 
 /**
  * Initializing the Data. Obviously the data is going to be hardcoded
@@ -25,21 +24,23 @@ Array.prototype.clone = function() {
 };
 
 var weddingImageData = [];
-weddingImageData.push({'thumb': s3Path + 'thumb-min-004.jpg', 'img': s3Path + "min-004.jpg"});
-weddingImageData.push({'thumb': s3Path + 'thumb-min-007.jpg', 'img': s3Path + "min-007.jpg"});
-weddingImageData.push({'thumb': s3Path + 'thumb-min-001.jpg', 'img': s3Path + "min-001.jpg"});
+weddingImageData.push({'thumb': cdnPath + 'thumb-min-004.jpg', 'img': cdnPath + "min-004.jpg"});
+weddingImageData.push({'thumb': cdnPath + 'thumb-min-007.jpg', 'img': cdnPath + "min-007.jpg"});
+weddingImageData.push({'thumb': cdnPath + 'thumb-min-001.jpg', 'img': cdnPath + "min-001.jpg"});
 
 function renderIndex(req, res) {
+  var isHK = req.location == 'hk';
   res.render('index', {
     layout: 'layout', 
     title: "Arthur and Timberly's Wedding",
-    homeImage: s3Path + "0003.jpg",
-    footerImage: s3Path + "wedding-footer-3.jpg",
-    hostPlaceImage: s3Path + "wedding-hongkong.jpg",
+    homeImage: cdnPath + "0003.jpg",
+    footerImage: cdnPath + "wedding-footer-3.jpg",
+    hostPlaceImageHK: cdnPath + "wedding-hongkong.jpg",
+    hostPlaceImageMacau: cdnPath + "wedding-macau.jpg",
     images: weddingImageData,
-    lat: req.location == 'hk' ? 22.379630 : 22.184340,
-    lon: req.location == 'hk' ? 114.188579 : 113.546984,
-    zoomLevel: req.location == 'hk' ? 18 : 15,
+    lat: isHK ? 22.379630 : 22.184340,
+    lon: isHK ? 114.188579 : 113.546984,
+    zoomLevel: isHK ? 18 : 15,
     location: req.location,
     i18n: req.t,
     url: req.url,
@@ -57,6 +58,7 @@ function renderRsvp(req, res, errorMap) {
   res.render('rsvp/index', {
     layout: 'rsvp/layout', 
     location: req.location,
+    hostPlaceImage: cdnPath + "rsvp-1.jpg",
     i18n: req.t,
     url: req.url,
     language: req.i18n.language,
