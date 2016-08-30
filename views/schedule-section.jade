@@ -1,7 +1,7 @@
 #hk-image-section.image-container
   .bg-image-wedding.bg-center-center(class=(location == "hk" ? "bg-image-hk" : "bg-image-macau") alt='' data-bottom-top='transform:scale(1.2) translate(-8%, 8%)' data-top-bottom='transform:scale(1.2) translate(8%, 8%)')
     .color-overlay
-  .desc-wrapper
+  .desc-wrapper(class=(location == "hk" ? "hk-desc-wrapper" : "macau-desc-wrapper"))
     p #{i18n(location + ':schedule:text1')}
     h1.display #{i18n(location + ':schedule:text2')}
     p #{i18n(location + ':schedule:text3')}
