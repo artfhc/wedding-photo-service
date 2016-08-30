@@ -93,12 +93,13 @@ function sendEmail(req, res) {
     subject:  'RSVP for Wedding Photo App',
     text:     'Content of the form: ' + JSON.stringify(req.form)
   }, function(err, json) {
-    if (err) { 
+    if(err) { 
       console.error("sendEmail failed: " + err);
       renderRsvp(req, res); 
+    } else {
+      console.log("sendEmail succeed: " + from);
+      renderIndex(req, res);
     }
-    console.log("sendEmail succeed: " + from);
-    renderIndex(req, res);
   });
 }
 
