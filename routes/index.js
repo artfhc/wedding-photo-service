@@ -24,9 +24,9 @@ Array.prototype.clone = function() {
 };
 
 var weddingImageData = [];
-weddingImageData.push({'thumb': cdnPath + 'thumb-min-004.jpg', 'img': cdnPath + "min-004.jpg"});
-weddingImageData.push({'thumb': cdnPath + 'thumb-min-007.jpg', 'img': cdnPath + "min-007.jpg"});
-weddingImageData.push({'thumb': cdnPath + 'thumb-min-001.jpg', 'img': cdnPath + "min-001.jpg"});
+weddingImageData.push({'thumb': cdnPath + 'thumb-min-004.jpg', 'img': cdnPath + "min-004.jpg", 'size': "2560x1920"});
+weddingImageData.push({'thumb': cdnPath + 'thumb-min-007.jpg', 'img': cdnPath + "min-007.jpg", 'size': "2560x1920"});
+weddingImageData.push({'thumb': cdnPath + 'thumb-min-001.jpg', 'img': cdnPath + "min-001.jpg", 'size': "1200x1600"});
 
 function renderIndex(req, res) {
   var isHK = req.location == 'hk';

@@ -2,10 +2,10 @@
   .container
     .row
       h1.text-center.entrytitle #{i18n("photo_gallery:txt1")}
-    .row
+    .row.photo-gallery-row(itemscope='', itemtype="http://schema.org/ImageGallery")
       each image in images
-        .col-md-4.padding-top-bottom-15
-          a(href='#{image.img}')
-            img(title='', alt='', src='#{image.thumb}')
+        figure.col-md-4.padding-top-bottom-15(itemprop="associatedMedia", itemscope='', itemtype="http://schema.org/ImageObject")
+          a(href='#{image.img}', itemprop="contentUrl", data-size='#{image.size}')
+            img(title='', alt='', src='#{image.thumb}', itemprop="thumbnail")
     .row
       p.text-center #{i18n("photo_gallery:txt2")}

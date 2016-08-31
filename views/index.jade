@@ -9,6 +9,9 @@ html.no-js(lang='')
     link(rel='apple-touch-icon', href='apple-touch-icon.png')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+    // Photoswipe
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css')
     link(rel='stylesheet', href='css/main.css')
     style.
       .bg-image {
@@ -23,7 +26,7 @@ html.no-js(lang='')
       .bg-image-footer {
         background-image: url(#{footerImage});
       }
-    link(rel='stylesheet', href='css/poptrox.css')
+    //- link(rel='stylesheet', href='css/poptrox.css')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
     script(src='js/vendor/typekit.js')
     script.
@@ -44,6 +47,7 @@ html.no-js(lang='')
     include schedule-section
     include direction-section
     include footer-section
+    include photoswipe
 
     // /container
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
@@ -51,6 +55,8 @@ html.no-js(lang='')
       window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\\/script>')
     script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.4/js/tether.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js')
     script(src='js/plugins.js')
     if !isMobile
       script(src='https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js')
