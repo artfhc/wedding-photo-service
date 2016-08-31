@@ -32,32 +32,20 @@ body {
     overflow: hidden;
 }
 .bg-image {
-    /* image specified in seperate class  */
-    
     height: 520px;
     width: 100%;
-    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/0003.jpg);
 }
 .bg-image-hk {
-    /* image specified in seperate class  */
-    
     height: 448px;
     width: 100%;
-    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-hongkong.jpg);
 }
 .bg-image-macau {
-    /* image specified in seperate class  */
-    
     height: 600px;
     width: 100%;
-    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-macau.jpg);
 }
 .bg-image-footer {
-    /* image specified in seperate class  */
-    
     height: 441px;
     width: 100%;
-    background-image: url(https://s3-us-west-2.amazonaws.com/propose-photos/wedding-footer-3.jpg);
 }
 .bg-image-rsvp {
     height: 550px;
@@ -149,10 +137,15 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    padding-top: 20%;
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.desc-wrapper.macau-desc-wrapper {
+    padding-top: 150px;
 }
 #footer-image-section .desc-wrapper {
-    padding-top: 10%;
+    padding-top: 130px;
 }
 
 #footer-image-section .desc-wrapper .display-2 {
@@ -203,10 +196,19 @@ img {
         height: 411px;
     }
     .desc-wrapper {
-        padding-top: 18%;
+        padding-top: 200px;
     }
-    #hk-image-section .desc-wrapper {
-        padding-top: 12%;
+    .desc-wrapper.macau-desc-wrapper {
+        padding-top: 180px;
+    }
+    .desc-wrapper.hk-desc-wrapper {
+        padding-top: 110px;
+    }
+    #footer-image-section .desc-wrapper {
+        padding-top: 150px;
+    }
+    #macau-image-section .desc-wrapper {
+        padding-top: 180px;
     }
     #footer-image-section .desc-wrapper .display-2 {
         font-size: 5.5rem;
@@ -225,11 +227,6 @@ img {
     }
     .bg-image-footer {
         height: 617px;
-    }
-    .desc-wrapper {
-        padding-top: 15%;
-        padding-left: 15%;
-        padding-right: 15%;
     }
     #footer-image-section .desc-wrapper {
         padding-top: 12%;
