@@ -230,8 +230,14 @@ img {
     .bg-image-footer {
         height: 617px;
     }
+    .desc-wrapper.hk-desc-wrapper {
+        padding-top: 150px;
+    }
     #footer-image-section .desc-wrapper {
         padding-top: 180px;
+    }
+    #footer-image-section .desc-wrapper:lang(zh) {
+        padding-top: 220px;
     }
     .display {
         font-size: 5.5rem;
