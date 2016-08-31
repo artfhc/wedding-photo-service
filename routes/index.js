@@ -45,7 +45,7 @@ function renderIndex(req, res) {
     i18n: req.t,
     url: req.url,
     language: req.i18n.language,
-    isMobile: req.isMobile
+    enableParallex: !req.isMobile || req.isTablet
   });
 }
 

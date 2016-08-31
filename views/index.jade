@@ -58,7 +58,7 @@ html.no-js(lang='#{language}')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js')
     script(src='js/plugins.js')
-    if !isMobile
+    if enableParallex
       script(src='https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js')
       script.
         var s = skrollr.init({ smoothScrolling: true });

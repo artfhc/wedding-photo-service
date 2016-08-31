@@ -46,10 +46,8 @@ app.use(function(req, res, next) {
 app.use(function(req, res, next) {
   // Get the mobile detect user agent
   var md = new MobileDetect(req.headers['user-agent']);
-  if (md.mobile())
-    req.isMobile = true;
-  else
-    req.isMobile = false;
+  req.isMobile = md.mobile() != null;
+  req.isTablet = md.tablet() != null;
   next();
 });
 
