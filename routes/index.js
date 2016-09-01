@@ -88,13 +88,21 @@ function requestRecaptchaVerification(req, res, recaptchaResponse, remoteAddress
 function sendEmail(req, res) {
   var sendgrid = sendGrid(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD),
       from = req.form.emailAddress || process.env.EMAILTO,
-      to = process.env.EMAILTO;
-
+      to = process.env.EMAILTO,
+      payload = {
+        firstName: req.form.firstName,
+        lastName: req.form.lastName,
+        emailAddress: req.form.emailAddress,
+        location: req.form.location,
+        willYouBeThere: req.form.willYouBeThere,
+        numberOfGuests: req.form.numberOfGuests,
+        message: req.form.message,
+      };
   sendgrid.send({
     to:       to,
     from:     from,
     subject:  'RSVP for Wedding Photo App',
-    text:     'Content of the form: ' + JSON.stringify(req.form)
+    text:     'Content of the form: ' + JSON.stringify(payload)
   }, function(err, json) {
     if(err) { 
       console.error("sendEmail failed: " + err);
