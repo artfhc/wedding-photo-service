@@ -33,7 +33,7 @@
   "hk:rsvp:button": "敬請回覆",
   "hk:rsvp:title": "別忘了",
   "hk:rsvp:description": "留個言給我們好嗎？",
-  "hk:sharetext": "Arthur&Timberly",
+  "hk:sharetext": "Arthur%26Timberly",
 
   "macau:wedding:option": "澳門",
   "macau:schedule:text1": "二零一六年十月十五日",
@@ -59,7 +59,7 @@
   "macau:rsvp:button": "敬請回覆",
   "macau:rsvp:title": "別忘了",
   "macau:rsvp:description": "留個言給我們好嗎？",
-  "macau:sharetext": "Arthur&Timberly",
+  "macau:sharetext": "Arthur%26Timberly",
 
   "rsvp:error:firstName": "你的名字?",
   "rsvp:error:lastName": "你的姓氏?",

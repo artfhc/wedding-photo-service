@@ -33,7 +33,7 @@
   "hk:rsvp:button": "RSVP",
   "hk:rsvp:title": "RSVP",
   "hk:rsvp:description": "Please respond by September 20th",
-  "hk:sharetext": "Arthur&Timberly",
+  "hk:sharetext": "Arthur%26Timberly",
 
   "macau:wedding:option": "Macau",
   "macau:schedule:text1": "Come celebrate with us",
@@ -59,7 +59,7 @@
   "macau:rsvp:button": "RSVP",
   "macau:rsvp:title": "RSVP",
   "macau:rsvp:description": "Please respond by Octorber 1st",
-  "macau:sharetext": "Arthur&Timberly",
+  "macau:sharetext": "Arthur%26Timberly",
 
   "rsvp:error:firstName": "What is your first name?",
   "rsvp:error:lastName": "What is your last name?",
