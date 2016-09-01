@@ -32,7 +32,7 @@ function renderIndex(req, res) {
   var isHK = req.location == 'hk';
   res.render('index', {
     layout: 'layout', 
-    title: "Arthur and Timberly's Wedding",
+    title: "The Wedding",
     homeImage: cdnPath + "0003.jpg",
     footerImage: cdnPath + "wedding-footer-3.jpg",
     hostPlaceImageHK: cdnPath + "wedding-hongkong.jpg",
@@ -59,6 +59,7 @@ function renderRsvp(req, res, errorMap) {
   res.render('rsvp/index', {
     layout: 'rsvp/layout', 
     location: req.location,
+    title: "The Wedding",
     hostPlaceImage: cdnPath + "rsvp-1.jpg",
     i18n: req.t,
     url: req.url,
