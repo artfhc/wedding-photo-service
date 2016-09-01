@@ -33,7 +33,7 @@ html.no-js(lang='#{language}')
       try {
       Typekit.load();
       } catch (e) {}
-  body#skrollr-body
+  body
     //if lt IE 8
       p.browserupgrade
         | You are using an 
@@ -41,12 +41,13 @@ html.no-js(lang='#{language}')
         |  browser. Please 
         a(href='http://browsehappy.com/') upgrade your browser
         |  to improve your experience.
-    include navbar
-    include header-section
-    include photo-gallery-section
-    include schedule-section
-    include direction-section
-    include footer-section
+    #skrollr-body(data-top data-bottom)
+      include navbar
+      include header-section
+      include photo-gallery-section
+      include schedule-section
+      include direction-section
+      include footer-section
     include photoswipe
 
     // /container
@@ -61,7 +62,7 @@ html.no-js(lang='#{language}')
     if enableParallex
       script(src='https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js')
       script.
-        var s = skrollr.init({ smoothScrolling: true });
+        var s = skrollr.init({ smoothScrolling: true, forceHeight: false });
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyACGHtQ_95KW0yN2nZOCNPn07VNa3pEROg')
     script(src='js/main.js')
     script.
