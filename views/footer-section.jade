@@ -4,6 +4,14 @@ footer#footer
     .row
       .col-md-12
           p.text-center #{i18n("footer:see_you_there")}
+    .row
+      .col-md-4
+      .col-md-4
+        a.text-center.nav-link.rsvp-link(href='/rsvp') 
+          | #{i18n(location + ":rsvp:button")}
+      .col-md-4
+    .row
+      .col-md-12
           p.text-center.share-links
             a(href="https://twitter.com/intent/tweet?url=http%3A%2F%2Farthurtimberly.com&text=#{i18n(shareText)}" target="_blank")
               i.fa.fa-2x.fa-twitter-square(aria-hidden="true", style="margin-right: 4px;")
