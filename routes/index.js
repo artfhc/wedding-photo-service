@@ -31,6 +31,7 @@ weddingImageData.push({'thumb': cdnPath + 'thumb-min-001.jpg', 'img': cdnPath + 
 function renderIndex(req, res) {
   var isHK = req.location == 'hk';
   res.render('index', {
+    originalUrl: req.originalUrl,
     layout: 'layout', 
     title: "The Wedding",
     homeImage: cdnPath + "0003.jpg",
@@ -50,13 +51,12 @@ function renderIndex(req, res) {
 }
 
 function renderRsvp(req, res, errorMap) {
-
   // TODO (artfhc): problem on the recaptcha object key
-  if (errorMap && req.form && req.form.getErrors("g-recaptcha-response")) {
-      errorMap.recaptcha = req.form.getErrors("g-recaptcha-response")
+  if (errorMap && req.form && !Boolean(req.form.getErrors("g-recaptcha-response"))) {
+    errorMap.recaptcha = req.form.getErrors("g-recaptcha-response");
   }
-
   res.render('rsvp/index', {
+    originalUrl: req.originalUrl,
     layout: 'rsvp/layout', 
     location: req.location,
     title: "The Wedding",

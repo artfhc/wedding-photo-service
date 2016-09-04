@@ -4,12 +4,13 @@ footer#footer
     .row
       .col-md-12
           p.text-center #{i18n("footer:see_you_there")}
-    .row
-      .col-md-4
-      .col-md-4
-        a.text-center.nav-link.rsvp-link(href='/rsvp') 
-          | #{i18n(location + ":rsvp:button")}
-      .col-md-4
+    if(originalUrl !== '/rsvp')
+      .row
+        .col-md-4
+        .col-md-4
+          a.text-center.nav-link.rsvp-link(href='/rsvp') 
+            | #{i18n(location + ":rsvp:button")}
+        .col-md-4
     .row
       .col-md-12
           p.text-center.share-links
