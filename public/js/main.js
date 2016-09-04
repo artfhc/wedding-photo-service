@@ -60,7 +60,7 @@ function toggleCookieParm(event) {
   var $hkImageSection = $('#hk-image-section');
   var $weddingNavbar = $('#wedding-navbar');
 
-  if($.isEmptyObject($hkImageSection))
+  if(!$hkImageSection[0])
     return;
 
   $(window).scroll(function() {
