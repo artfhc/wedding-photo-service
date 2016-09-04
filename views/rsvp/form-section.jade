@@ -25,10 +25,18 @@
                   input(type="text", name="lastName" class="form-control", value=locals.lastName)
                   label(class="caption") #{i18n('rsvp:last_name')}
             .form-group
-              label #{i18n('rsvp:email_address')}
+              label #{i18n('rsvp:contact_information')}
                 if errorMap.emailAddress
                   code #{i18n(errorMap.emailAddress)}
-              input(type="text", name="emailAddress" class="form-control", value=locals.emailAddress)
+                if errorMap.phoneNumber
+                  code #{i18n(errorMap.phoneNumber)}
+              .row
+                .col-md-6
+                  input(type="text", name="emailAddress" class="form-control", value=locals.emailAddress)
+                  label(class="caption") #{i18n('rsvp:email_address')}
+                .col-md-6
+                  input(type="text", name="phoneNumber" class="form-control", value=locals.phoneNumber)
+                  label(class="caption") #{i18n('rsvp:phone_number')}
             .form-group
               label #{i18n('rsvp:location')}
                 if errorMap.location

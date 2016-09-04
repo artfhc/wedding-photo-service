@@ -88,12 +88,13 @@ function requestRecaptchaVerification(req, res, recaptchaResponse, remoteAddress
 
 function sendEmail(req, res) {
   var sendgrid = sendGrid(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD),
-      from = req.form.emailAddress || process.env.EMAILTO,
+      from = process.env.EMAILFROM,
       to = process.env.EMAILTO,
       payload = {
         firstName: req.form.firstName,
         lastName: req.form.lastName,
         emailAddress: req.form.emailAddress,
+        phoneNumber: req.form.phoneNumber,
         location: req.form.location,
         willYouBeThere: req.form.willYouBeThere,
         numberOfGuests: req.form.numberOfGuests,
@@ -129,6 +130,7 @@ router.post(
     field("firstName").trim().required("", "rsvp:error:firstName"),
     field("lastName").trim().required("", "rsvp:error:lastName"),
     field("emailAddress").trim().isEmail("rsvp:error:emailAddress"),
+    field("phoneNumber").trim().isNumeric("rsvp:error:phoneNumber"),
     field("location").required("", "rsvp:error:location"),
     field("willYouBeThere").required("", "rsvp:error:willYouBeThere"),
     field("numberOfGuests"),
