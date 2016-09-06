@@ -30,6 +30,7 @@ weddingImageData.push({'thumb': cdnPath + 'thumb-min-001.jpg', 'img': cdnPath + 
 
 function renderIndex(req, res) {
   var isHK = req.location == 'hk';
+  console.log(process.env.PARALLAX_DIRECTION);
   res.render('index', {
     originalUrl: req.originalUrl,
     layout: 'layout', 
@@ -46,7 +47,8 @@ function renderIndex(req, res) {
     i18n: req.t,
     url: req.url,
     language: req.i18n.language,
-    enableParallex: !req.isMobile || req.isTablet
+    enableParallex: !req.isMobile || req.isTablet,
+    parallaxDirection: process.env.PARALLAX_DIRECTION
   });
 }
 

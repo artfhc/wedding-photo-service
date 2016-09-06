@@ -1,6 +1,10 @@
 #hk-image-section.image-container
-  .bg-image-wedding.bg-center-center(class=(location == "hk" ? "bg-image-hk" : "bg-image-macau") alt='' data-bottom-top='transform:scale(1.2) translate(-8%, 8%)' data-top-bottom='transform:scale(1.2) translate(8%, 8%)')
-    .color-overlay
+  if parallaxDirection == "horizontal"
+    .bg-image-wedding.bg-center-center(class=(location == "hk" ? "bg-image-hk" : "bg-image-macau") alt='' data-bottom-top='transform:scale(1.2) translate(-8%, 8%)' data-top-bottom='transform:scale(1.2) translate(8%, 8%)')
+      .color-overlay
+  else
+    .bg-image-wedding.bg-center-center(class=(location == "hk" ? "bg-image-hk" : "bg-image-macau") alt='' data-bottom-top='transform:scale3d(1.5, 1.5, 1.5) translate3d(0px, -50%, 0px)' data-center-center='transform:scale3d(1.5, 1.5, 1.5) translate3d(0px, 0%, 0px)' data-top-bottom='transform:scale3d(1.5, 1.5, 1.5) translate3d(0px, 25%, 0px)')
+      .color-overlay
   .desc-wrapper(class=(location == "hk" ? "hk-desc-wrapper" : "macau-desc-wrapper"))
     p #{i18n(location + ':schedule:text1')}
     h1.display #{i18n(location + ':schedule:text2')}
