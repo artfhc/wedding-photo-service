@@ -12,7 +12,7 @@
   "hk:wedding:date_location": "October 2nd, 2016 · 8 Pak Hok Ting Street, Shatin, Hong Kong",
   "hk:wedding:option": "Hong Kong",
   "hk:schedule:text1": "Come celebrate with us",
-  "hk:schedule:text2": "October, 2nd, 2016",
+  "hk:schedule:text2": "October 2nd, 2016",
   "hk:schedule:text3": "Royal Park Hong Kong Hotel",
   "hk:schedule:time:1": "17:30",
   "hk:schedule:time:2": "18:00",
@@ -61,6 +61,8 @@
   "macau:rsvp:description": "Please respond by Octorber 1st",
   "macau:sharetext": "Arthur%26Timberly",
   "macau:schedule:title": "Schedule (Macau)",
+
+  "us:wedding:option": "Why not US?!",
 
   "rsvp:error:firstName": "What is your first name?",
   "rsvp:error:lastName": "What is your last name?",

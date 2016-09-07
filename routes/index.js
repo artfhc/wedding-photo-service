@@ -30,7 +30,6 @@ weddingImageData.push({'thumb': cdnPath + 'thumb-min-001.jpg', 'img': cdnPath + 
 
 function renderIndex(req, res) {
   var isHK = req.location == 'hk';
-  console.log(process.env.PARALLAX_DIRECTION);
   res.render('index', {
     originalUrl: req.originalUrl,
     layout: 'layout', 
@@ -133,7 +132,7 @@ router.post(
     field("lastName").trim().required("", "rsvp:error:lastName"),
     field("emailAddress").trim().isEmail("rsvp:error:emailAddress"),
     field("phoneNumber").trim().isNumeric("rsvp:error:phoneNumber"),
-    field("location").required("", "rsvp:error:location"),
+    field("address").required("", "rsvp:error:location"),
     field("willYouBeThere").required("", "rsvp:error:willYouBeThere"),
     field("numberOfGuests"),
     field("message"),

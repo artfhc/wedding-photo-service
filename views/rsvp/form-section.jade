@@ -39,16 +39,20 @@
                   label(class="caption") #{i18n('rsvp:phone_number')}
             .form-group
               label #{i18n('rsvp:location')}
-                if errorMap.location
-                  code #{i18n(errorMap.location)}
+                if errorMap.address
+                  code #{i18n(errorMap.address)}
               div.form-check
                 label.form-check-label
-                  input.form-check-input(type="radio", name="location", value="hk") 
+                  input.form-check-input(type="radio", name="address", value="hk", checked=(locals.address=='hk'))
                   | &nbsp;#{i18n('hk:wedding:option')}
               div.form-check
                 label.form-check-label
-                  input.form-check-input(type="radio", name="location", value="macau") 
+                  input.form-check-input(type="radio", name="address", value="macau", checked=(locals.address=='macau'))
                   | &nbsp;#{i18n('macau:wedding:option')}
+              div.form-check
+                label.form-check-label
+                  input.form-check-input(type="radio", name="address", value="us", checked=(locals.address=='us'))
+                  | &nbsp;#{i18n('us:wedding:option')}
             .form-group
               label #{i18n('rsvp:will_you_be_there')}
                 sup *
@@ -64,7 +68,7 @@
               label #{i18n('rsvp:message')}
                 if errorMap.message
                   code #{i18n(errorMap.message)}
-              textarea(name="message", class="form-control", value=locals.message)
+              textarea(name="message", class="form-control") #{locals.message}
             .form-group
               label #{i18n('rsvp:recaptcha')}
                 if errorMap.recaptcha
