@@ -46,7 +46,7 @@ html.no-js(lang='#{language}')
         var jumbotronDOM = document.getElementsByClassName('jumbotron')[0];
         var imageContainerDOM = document.getElementsByClassName('image-container')[0];
         var footerDOM = document.getElementById('footer');
-        jumbotronDOM.style.height = window.innerHeight - imageContainerDOM.offsetHeight - footerDOM.offsetHeight + 'px';
+        jumbotronDOM.style.height = window.innerHeight - imageContainerDOM.offsetHeight - footerDOM.offsetHeight - 1 + 'px';
 
         if(jumbotronDOM.offsetHeight <= 184)
           jumbotronDOM.style.height = '184px';

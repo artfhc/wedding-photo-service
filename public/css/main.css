@@ -519,6 +519,8 @@ footer .footer-inner {
 }
 
 footer .share-links {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 footer .share-links a {
