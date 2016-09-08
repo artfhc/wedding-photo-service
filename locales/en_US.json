@@ -84,5 +84,8 @@
   "rsvp:guests": "Will you be bringing a +1? If so please specify his or her name 👫",
   "rsvp:message": "Message",
   "rsvp:recaptcha": "Captcha",
-  "rsvp:submit": "Submit"
+  "rsvp:submit": "Submit",
+
+  "404:page_not_found": "Page Not Found",
+  "404:message": "Sorry, but the page you were trying to view does not exist."
 }
