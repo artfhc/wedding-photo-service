@@ -1,0 +1,63 @@
+doctype html
+html.no-js(lang='#{language}')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title #{title} - 404
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/main.css')
+    style.
+      .bg-image-rsvp {
+        background-image: url(#{hostPlaceImage});
+      }
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+    script(src='js/vendor/typekit.js')
+    script.
+      try {
+      Typekit.load();
+      } catch (e) {}
+  body
+    //if lt IE 8
+      p.browserupgrade
+        | You are using an 
+        strong outdated
+        |  browser. Please 
+        a(href='http://browsehappy.com/') upgrade your browser
+        |  to improve your experience.
+    .image-container
+      .bg-image-rsvp.bg-image-wedding.bg-center-bottom(alt='')
+        .color-overlay
+      .desc-wrapper
+        h1.display-2 #{i18n('404:page_not_found')}
+    .jumbotron
+      .container
+        .row
+          .col-md-1
+          .col-md-10
+            p.text-center #{i18n('404:message')}
+          .col-md-1
+    include ../footer-section
+    script.
+      (function() {
+        var jumbotronDOM = document.getElementsByClassName('jumbotron')[0];
+        var imageContainerDOM = document.getElementsByClassName('image-container')[0];
+        var footerDOM = document.getElementById('footer');
+        jumbotronDOM.style.height = window.innerHeight - imageContainerDOM.offsetHeight - footerDOM.offsetHeight + 'px';
+
+        if(jumbotronDOM.offsetHeight <= 184)
+          jumbotronDOM.style.height = '184px';
+
+
+      })();
+    // /container
+    script.
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-83206420-1','auto');ga('send','pageview');

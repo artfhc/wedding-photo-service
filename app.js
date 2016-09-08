@@ -64,6 +64,23 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+// If status code is 404, show 404 Not Found page
+app.use(function(err, req, res, next) {
+  if(err.status === 404) {
+    res.status(404);
+    res.render('404/index', {
+      message: err.message,
+      error: err,
+      title: "The Wedding",
+      language: req.i18n.language,
+      location: req.location,
+      i18n: req.t,
+      hostPlaceImage: "https://d3oglu70a1k4a5.cloudfront.net/rsvp-1.jpg"
+    });
+  }
+  else
+    next(err);
+});
 
 // development error handler
 // will print stacktrace

@@ -84,5 +84,8 @@
   "rsvp:guests": "你會有多少人出席呢？ 👫",
   "rsvp:message": "留言",
   "rsvp:recaptcha": "驗證碼",
-  "rsvp:submit": "提交"
+  "rsvp:submit": "提交",
+
+  "404:page_not_found": "Page Not Found",
+  "404:message": "Sorry, but the page you were trying to view does not exist."
 }
