@@ -25,7 +25,7 @@ Array.prototype.clone = function() {
 
 var weddingImageData = [];
 weddingImageData.push({'thumb': cdnPath + 'thumb-min-004.jpg', 'img': cdnPath + "min-004.jpg", 'size': "2560x1920"});
-weddingImageData.push({'thumb': cdnPath + 'thumb-min-007.jpg', 'img': cdnPath + "min-007.jpg", 'size': "2560x1920"});
+weddingImageData.push({'thumb': cdnPath + 'thumb-min-008.jpg', 'img': cdnPath + "min-008.jpg", 'size': "2560x1707"});
 weddingImageData.push({'thumb': cdnPath + 'thumb-min-001.jpg', 'img': cdnPath + "min-001.jpg", 'size': "1200x1600"});
 
 function renderIndex(req, res) {
@@ -34,8 +34,8 @@ function renderIndex(req, res) {
     originalUrl: req.originalUrl,
     layout: 'layout', 
     title: "The Wedding",
-    homeImage: cdnPath + "0003.jpg",
-    footerImage: cdnPath + "wedding-footer-3.jpg",
+    homeImage: cdnPath + (isHK ? "0003.jpg" : "0050.jpg"),
+    footerImage: cdnPath + "wedding-footer-4.jpg",
     hostPlaceImageHK: cdnPath + "wedding-hongkong.jpg",
     hostPlaceImageMacau: cdnPath + "wedding-macau.jpg",
     images: weddingImageData,
